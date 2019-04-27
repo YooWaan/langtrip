@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+      /* Two-column layout */
+.left-column {
+  color: #777;
+  width: 20%;
+  height: 92%;
+  float: left;
+}
+  .left-column h2:last-of-type, .left-column h3:last-child {
+    color: #000;
+  }
+.right-column {
+  width: 75%;
+  float: right;
+  padding-top: 1em;
+}
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+name: inverse
+class: center, middle, inverse
+
+# Title
+
+---
+
+# Agenda
+
+1. Introduction
+2. Deep-dive
+3. ...
+
+---
+
+# Introduction
+
+
+---
+
+# Pre test
+
+
+```golang
+
+func main() {
+   println("hello")
+}
+# comment
+```
+
+<button onclick="hello();">Hello</button>
+
+---
+.left-column[
+  ## What is it?
+  ## Why use it?
+]
+.right-column[
+As the slideshow is expressed using Markdown, you may:
+
+- Focus on the content, expressing yourself in next to plain text not worrying what flashy graphics and disturbing effects to put where
+
+As the slideshow is actually an HTML document, you may:
+
+- Display it in any decent browser
+
+- Style it using regular CSS, just like any other HTML content
+
+- Use it offline!
+
+As the slideshow is contained in a plain file, you may:
+
+- Store it wherever you like; on your computer, hosted from your Dropbox, hosted on Github Pages alongside the stuff you're presenting...
+
+- Easily collaborate with others, keeping track of changes using your favourite SCM tool, like Git or Mercurial
+]
+---
+template: inverse
+
+## How does it work, then?
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+      console.log(slideshow);
+    </script>
+    <script>
+function hello() {console.log('Oh');}
+    </script>
+  </body>
+</html>
