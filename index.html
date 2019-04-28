@@ -3,17 +3,31 @@
   <head>
     <title>Title</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+
     <style>
       @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Kosugi+Maru:400,700,400italic);
       @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 
-      body { font-family: 'Droid Serif'; }
+      body { font-family: 'Kosugi Maru'; }
       h1, h2, h3 {
-        font-family: 'Yanone Kaffeesatz';
+        font-family: 'Kosugi Maru';
         font-weight: normal;
       }
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+
+      .en, .badge {font-family: 'Yanone Kaffeesatz'; font-weight: normal;}
+      .title-img img {width:200px;}
+      .big {font-size:12rem;}
+      .strong {font-size:8rem;} .display-3 ol, .display-3 ul {line-height: 1.7em;}
+
+      .top-background {
+        background-color: #1fc8db;
+        background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+        color: white;
+        opacity: 0.95;
+      }
 
       .inverse {
         background: #272822;
@@ -24,6 +38,10 @@
         color: #f3f3f3;
         line-height: 0.8em;
       }
+
+      .bubble { font-family: 'Kosugi Maru'; position: relative; background: #e7eff1; border-radius: .4em; padding-top:4px;padding-bottom:4px; padding-left:16px;padding-right:16px; }
+      .bubble:after { content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 0; border: 20px solid transparent; border-top-color: #e7eff1; border-bottom: 0; border-left: 0; margin-left: -10px; margin-bottom: -20px; }
+
       /* Two-column layout */
 .left-column {
   color: #777;
@@ -39,78 +57,32 @@
   float: right;
   padding-top: 1em;
 }
+
+    /* slides */
+    .history-text {font-size: 2rem;} .history-text i {font-size: 5rem;}
+
     </style>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-mfizz/2.4.1/font-mfizz.min.css" integrity="sha256-KkbZmx6FZVSEtoV2osxWijO2la7keAhUtFPsV0IPkv8=" crossorigin="anonymous" />
+
   </head>
   <body>
-    <textarea id="source">
-name: inverse
-class: center, middle, inverse
+    <textarea id="source"></textarea>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
 
-# Title
-
----
-
-# Agenda
-
-1. Introduction
-2. Deep-dive
-3. ...
-
----
-
-# Introduction
-
-
----
-
-# Pre test
-
-
-```golang
-
-func main() {
-   println("hello")
-}
-# comment
-```
-
-<button onclick="hello();">Hello</button>
-
----
-.left-column[
-  ## What is it?
-  ## Why use it?
-]
-.right-column[
-As the slideshow is expressed using Markdown, you may:
-
-- Focus on the content, expressing yourself in next to plain text not worrying what flashy graphics and disturbing effects to put where
-
-As the slideshow is actually an HTML document, you may:
-
-- Display it in any decent browser
-
-- Style it using regular CSS, just like any other HTML content
-
-- Use it offline!
-
-As the slideshow is contained in a plain file, you may:
-
-- Store it wherever you like; on your computer, hosted from your Dropbox, hosted on Github Pages alongside the stuff you're presenting...
-
-- Easily collaborate with others, keeping track of changes using your favourite SCM tool, like Git or Mercurial
-]
----
-template: inverse
-
-## How does it work, then?
-
-    </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js">
     </script>
     <script>
-      var slideshow = remark.create();
-      console.log(slideshow);
+      var slideshow = remark.create({
+        ratio: '16:9',
+        navigation: {scroll: false,touch: false,click: false},
+        sourceUrl: 'docs/gopher-lang-trip.md'
+      });
+      $(document).ready(function() { $('body').bootstrapMaterialDesign(); });
     </script>
     <script>
 function hello() {console.log('Oh');}
