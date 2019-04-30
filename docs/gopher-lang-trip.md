@@ -8,14 +8,6 @@ class: center, middle, top-background
 
 ---
 
-# Agenda
-
-1. Introduction
-2. Deep-dive
-3. ...
-
----
-
 # Pre test
 
 
@@ -157,8 +149,8 @@ class: middle
 ]
 
 <p class="strong">
-  <span class="badge badge-pill badge-warning">🤓 Data Engineer</span>
-  <span class="badge badge-pill badge-primary">⛑ Site Reliability Engineer</span>
+  <span class="badge badge-pill badge-warning align-middle">🤓 Data Engineer</span>
+  <span class="badge badge-pill badge-primary align-middle">⛑ Site Reliability Engineer</span>
   <span class="badge badge-pill badge-light">Application Engineer</span>
 </p>
 
@@ -180,18 +172,18 @@ class: center, middle
 ---
 class: center, middle
 
-.display-1[
+.display-2[
 - どう書いたらいいのか？
 - どんな言語なのか？
 ]
 
 <div class="row justify-content-center mb-4">
   <div class="col-md-5" >
-  <p class="bubble display-1" style="width:420px;">不安を解決</p>
+  <p class="bubble display-2" style="width:420px;">不安を解決</p>
  </div>
 </div>
 <div class="row justify-content-center">
-<img alt="gopher" src="images/gophercolor.png" width="120px"/>
+<img alt="gopher" src="images/gophercolor.png" width="10%" height="10%"/>
 </div>
 
 ---
@@ -225,7 +217,7 @@ class: center, middle
 
 # 📜 概要
 
-.display-3[
+.display-4[
 1. そもそもの話
     - Golang の基本的なことを見ていきます
 2. BestPractice12の紹介とそのTips
@@ -252,21 +244,26 @@ class: center, middle
 
 ---
 
-.history-text[
+# Golang とは
 
+.history-text[
 <table class="table">
   <tr>
   <td>
 	<i class="icon-python text-success"></i><br/>
 	<i class="icon-java-duke"></i>
   </td>
-  <td><i class="icon-ruby text-danger"></i></td>
-  <td><i class="icon-javascript-alt" style="color:gold;"></i></td>
+  <td class="align-middle"><i class="icon-ruby text-danger"></i></td>
+  <td class="align-middle"><i class="icon-javascript-alt" style="color:gold;"></i></td>
   <td></td>
-  <td><i class="icon-csharp"></i></td>
+  <td class="align-middle"><i class="icon-csharp"></i></td>
   <td></td>
   <td></td>
-  <td><i class="icon-go text-info"></i></td>
+  <td class="align-middle"><i class="icon-go text-info"></i></td>
+
+  <td class="align-middle"><img class="history-img"src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Kotlin-logo.png"/></td>
+  <td><img  src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Swift_logo.svg/40px-Swift_logo.svg.png"/></td>
+  <td></td>
   </tr>
 <tr class="en">
 <td>1991</td>
@@ -277,16 +274,22 @@ class: center, middle
 <td>2006</td>
 <td>2007</td>
 <td>2009</td>
+<td>2011</td>
+<td>2014</td>
+<td></td>
 </tr>
   <tr>
   <td></td>
   <td></td>
-  <td>Sega Saturn</td>
-  <td>PlayStation</td>
+  <td><img class="history-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Sega-Saturn-Console-Set-Mk1.jpg/1920px-Sega-Saturn-Console-Set-Mk1.jpg"  /></td>
+  <td><img class="history-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/PSX-Console-wController.png/280px-PSX-Console-wController.png"/></td>
   <td>3G</td>
-  <td>PlayStation3</td>
+  <td><img class="history-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/PS3Versions.png/250px-PS3Versions.png"/></td>
   <td>iPhone</td>
+  <td></td>
   <td>4G</td>
+  <td></td>
+  <td></td>
   </tr>
 </table>
 
@@ -297,6 +300,24 @@ class: center, middle
 [プログラム年表 wikipediaより](https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E%E5%B9%B4%E8%A1%A8)
 </small>
 https://bridgera.com/5g-promises-new-horizons-for-iot/
+
+http://wiki.c2.com/?AntiPatternsCatalog
+https://dmitri.shuralyov.com/idiomatic-go
+
+
+---
+
+# Golang とは
+
+
+
+* expressive
+* concise
+* clean
+* efficient
+
+
+<img src="images/what-is-golang.png" width="60%"/>
 
 ---
 
