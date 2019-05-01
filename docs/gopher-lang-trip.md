@@ -862,7 +862,10 @@ class: center, middle
 
 <div class="text-center mermaid">
 graph LR;
-    Child-- 継承 -->Parent;
+    child(Child)-- 継承 -->parent(Parent);
+
+    style child fill:#1fc8db
+    style parent fill:#1fc8db
 </div>
 
 
@@ -893,6 +896,24 @@ class Child(Parent):
 
 ---
 ## <i class="icon-go"></i> Class(クラス) Example
+
+```golang
+type Parent struct {}
+func (p Parent) say() string {return "parent" }
+func (p Parent) Hello() { println(p.say())}
+
+type Child struct { Parent }
+func (c Child) say() string {return "child" }
+
+func main() {
+    p := Parent{}
+    p.hello()
+    c := Child{}
+    c.hello()
+}
+```
+
+
 
 ---
 ## <i class="icon-go"></i> Class(クラス) Summary
@@ -935,6 +956,35 @@ end
 ---
 ## <i class="icon-go"></i> Ruby block variable: Example
 
+```golang
+type Person struct {
+    Name string
+}
+
+type People []Person
+
+func (pp People) Each(hfn func(i int, p Person)) {
+  for i, p := range pp {
+     hfn(i, p)
+  }
+}
+
+func main() {
+   people := People{
+      Person{"tom"},
+      Person{"bom"},
+   }
+
+   names := []string{}
+   people.Each(func(i int, p Persion) {
+       names = append(names, p.Name)
+   })
+   println(strings.Join(names, ","))
+}
+
+```
+
+
 ---
 ## <i class="icon-go"></i> Ruby block variable: Summary
 
@@ -950,16 +1000,150 @@ end
 ## <i class="icon-go"></i> async, await: Summary
 
 ---
-## <i class="icon-java-duke"></i>  anotation, <i class="icon-python text-success"></i> decorator
+## <i class="icon-java-duke"></i>  annotation, <i class="icon-python text-success"></i> decorator
+
+.left-split[
+```java
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Target;
+
+@Target(ElementType.METHOD) // メソッドにしか付けられません
+public @interface Option {
+    boolean isActive() default false;
+}
+
+class Api {
+
+  @Option(isActive = true)
+  public void get() String {
+     return "get";
+  }
+
+  @Option
+  public void put() String {
+     return "put";
+  }
+}
+```
+]
+
+.right-split[
+
+```python
+def api_option(fn, is_active = False):
+   ''' orginal function's argument not supported '''
+   if is_active == True:
+       def func_wrapper(name):
+          return "wrap[{0}]".format(fn(name))
+       return func_wrapper
+   return fn
+
+@api_option(is_active=True)
+def say():
+    return 'say'
+
+@api_option
+def hello():
+    ''' no decrated function ''''
+    return hello'
+```
+]
 
 ---
 ## <i class="icon-go"></i>  anotation, decorator: Example
+
+
+```golang
+// api function
+type ApiFunc func() string
+
+// function adpter
+func ApiOption(fn ApiFunc, isActive bool) ApiFunc {
+  if isActive {
+    return func() string {
+       return fmt.Sprintf("wrap [%s]", fn())
+    }
+  }
+  return fn  
+}
+
+func Get() string { return "get" }
+
+type Api struct {
+    Get ApiFuc `option:"active=true"`
+    Put ApiFuc `option:"active=false"`
+}
+
+
+```
+
 
 ---
 ## <i class="icon-go"></i>  anotation, decorator: Sumamry
 
 ---
 ## <i class="icon-java-duke"></i>  interface, <i class="icon-python text-success"></i> duck typing
+
+
+.left-split[
+
+```java
+interface Animal {
+    void run() throws RuntimeException
+}
+
+class Dog implements Animal {
+    @Override
+    public void run() throws RuntimeException {
+        System.out.println("wow");
+    }
+}
+
+class Cat implements Animal {
+    @Override
+    public void run() throws RuntimeException {
+        System.out.println("miao");
+    }
+}
+
+public class Main {
+
+    publc static void main(String[] args) {
+        Animal dog = new Dog();
+        Animal cat = new Cat();
+        dog.run();
+        cat.run()
+    }
+}    
+
+```
+]
+
+.right-split[
+
+```python
+# anima.run
+
+class Dog:
+
+   def run():
+       print('wow')
+
+class Dog:
+
+   def run():
+       print('wow')
+
+
+dog = new Dog
+cat = new Cat
+
+dog.run
+cat.run
+
+```
+]
+
 
 ---
 ## <i class="icon-go"></i> interface, duck typing: Example
