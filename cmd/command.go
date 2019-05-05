@@ -3,8 +3,7 @@ package main
 import (
 	"bytes"
 	"fmt"
-	//"go/parser"
-	//"go/token"
+	"encoding/json"
 	"io"
 	"io/ioutil"
 	"log"
@@ -12,7 +11,6 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
-	"encoding/json"
 )
 
 type Code struct {
@@ -33,9 +31,9 @@ type CodeRunner func(string, io.Writer) error
 
 var (
 	coderRunners = map[string]CodeRunner{
-		"go": tempRun("go", "run", "main.go"),
-		"java": tempRun("jshell", "-v", "main.java"),
-		"ruby": evaluator("ruby", "-e"),
+		"go":     tempRun("go", "run", "main.go"),
+		"java":   tempRun("jshell", "-v", "main.java"),
+		"ruby":   evaluator("ruby", "-e"),
 		"python": evaluator("python", "-c"),
 	}
 )
@@ -83,7 +81,6 @@ func tempRun(cmd, opt, tmp string) CodeRunner {
 		return err
 	}
 }
-
 
 //
 // Command run web server

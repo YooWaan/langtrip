@@ -1,22 +1,24 @@
 package main
 
-type Parent struct {}
-func (p Parent) say() string {return "parent" }
-func (p Parent) Print() { println(p.say())}
-func (p Parent) Hello() { println(p.say())}
+type Parent struct{}
 
-type Child struct { Parent }
-func (c Child) say() string {return "child" }
-func (c Child) Hello() { println(c.say()) }
+func (p Parent) say() string { return "parent" }
+func (p Parent) Print()      { println(p.say()) }
+func (p Parent) Hello()      { println(p.say()) }
+
+type Child struct{ Parent }
+
+func (c Child) say() string { return "child" }
+func (c Child) Hello()      { println(c.say()) }
 
 func main() {
-    p := Parent{}
+	p := Parent{}
 	println("parent,", p.say())
 	p.Print()
-    p.Hello()
+	p.Hello()
 
-    c := Child{}
+	c := Child{}
 	println("child,", c.say())
 	c.Print() // not work
-    c.Hello()
+	c.Hello()
 }

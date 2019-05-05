@@ -4,10 +4,12 @@ type Say interface {
 	Print()
 }
 
-type sayParent struct {}
+type sayParent struct{}
+
 func (p *sayParent) Print() { println("parent") }
 
-type sayChild struct {}
+type sayChild struct{}
+
 func (p *sayChild) Print() { println("child") }
 
 type Person struct {

@@ -13,11 +13,11 @@ end
 
 puts '--- array each ---'
 [1, 2, 3].each do |i|
-    puts i*2
+  puts i*2
 end
 
-puts '--- class define ---'
+puts '--- class each ---'
 list = List.new([4, 5, 6])
 list.each do |i|
-    puts i*2
+  puts i*2
 end

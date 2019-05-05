@@ -1,10 +1,10 @@
-function initPlayer(elId){
+function initPlayer(playerId){
   'use strict';
   var langMap = {
 	rb: 'ruby', go: 'go', py: 'python', java: 'java', md: 'markdown'
   };
 
-  var el = document.getElementById(elId);
+  var el = document.getElementById(playerId);
 
   el.innerHTML = `
 <ul class="nav nav-tabs md-tabs" id="myPlayerTabs" role="tablist"></ul>
@@ -16,10 +16,9 @@ function initPlayer(elId){
 </div>
 
 <div class="player-control mt-3">
-<button class="btn" onclick="player.run();">Run</button>
-<button class="btn" onclick="player.close();">Close</button>
-</div>
-`;
+<button class="btn btn-raised" onclick="player.run();">Run</button>
+<button class="btn btn-raised" onclick="player.close();">Close</button>
+</div>`;
 
   function getSrc(s) {
 	return fetch(s, {cache: 'no-cache'}).then(function(res) {
@@ -28,6 +27,7 @@ function initPlayer(elId){
   };
 
   function selectTab(e) {
+    console.log(e);
 	$(e).tab('show');
   };
 
@@ -47,7 +47,7 @@ function initPlayer(elId){
 	Array.from(arguments, function(f, i) {
 	  var elId = f.replace(/[\/\.]/g, '_');
 	  var nav = `<li class="nav-item">
-    <a class="nav-link active" id="${elId}-tab" data-toggle="tab" href="#${elId}" role="tab" aria-controls="${elId}"
+    <a class="nav-link" id="${elId}-tab" data-toggle="tab" href="#${elId}" role="tab" aria-controls="${elId}"
       aria-selected="true" onclick="player.tab(this.parentNode);">${f}</a>
   </li>`;
 	  tabs += nav;
@@ -64,7 +64,9 @@ function initPlayer(elId){
 	  var codes = values.join('');
 	  updateTab(tabs, codes);
 	  $('#player').show();
-	});
+	}).then(function() {
+      selectTab(document.querySelector('#player .nav-item'));
+    });
   };
 
   function dispose() {

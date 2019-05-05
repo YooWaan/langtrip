@@ -185,7 +185,7 @@ class: center, middle
 ]
 
 ---
-class: center, middle
+class: center, middle, eye-bg
 
 .strong[
 なので、遠慮なく途中で
@@ -194,6 +194,7 @@ class: center, middle
 
 大丈夫です
 ]
+
 
 ---
 
@@ -239,11 +240,11 @@ class: center, middle
 ]
 
 .display-3[
-▶ 不安の構成要素 (懸念事項)
+<i class="material-icons text-secondary">assistant_photo</i> 不安の構成要素 (懸念事項)
 
-Golangとは （認識）️
+<i class="material-icons text-secondary">assistant_photo</i> Golangとは （認識)
 
-始める準備 （取っ掛かり）
+<i class="material-icons text-secondary">assistant_photo</i> 始める準備 （取っ掛かり）
 ]
 
 </div>
@@ -427,7 +428,6 @@ https://dmitri.shuralyov.com/idiomatic-go
 ## Golang とは
 
 
-
 * expressive
 * concise
 * clean
@@ -446,33 +446,11 @@ https://dmitri.shuralyov.com/idiomatic-go
 ]
 
 .display-3[
-✔️ Golangとは （認識）️
+<i class="material-icons text-info">assistant_photo</i> Golangとは （認識）️
 
-▶ 開発の要素 (懸念事項)
+<i class="material-icons text-secondary">assistant_photo</i> 開発の要素 (懸念事項)
 
-始める準備 （取っ掛かり）
-]
-
-</div>
-</div>
-
-
----
-## そもそもの話
-
-<div class="container border rounded">
-<div class="row fh ml-3 ml-3 mt-5" style="height:40vh;">
-.display-4[
-ものを認識 と 懸念事項 を考慮して 取っ掛かり の話
-]
-
-.display-3[
-
-✔️ Golangとは （認識）️
-
-✔ 開発の要素 (懸念事項)
-
-▶ 始める準備 （取っ掛かり）
+<i class="material-icons text-secondary">assistant_photo</i> 始める準備 （取っ掛かり）
 ]
 
 </div>
@@ -758,7 +736,7 @@ pacakge json
 
 var (
     JSONEncoder = someThing{} // bad
-    Encoder = someThing{}  // good
+    Encoder = someThing{}     // good
 )
 ```
 
@@ -766,7 +744,7 @@ var (
 import "json"
 
 json.JSONEncoder.foo() // bad
-json.Encoder.foo()  // good
+json.Encoder.foo()     // good
 
 ```
 
@@ -813,8 +791,10 @@ type Gopher struct {
 ```golang
 // 1. method 定義ができます
 func (g *Gopher) WriteToFile(f *os.File) (int64, error) {
+
 // 2. 具体的な型はテストしにくいので、Interfaceを利用する
 func (g *Gopher) WriteToReadWriter(rw io.ReadWriter) (int64, error) {
+
 // 3. 関数で必要なことにを検討する io.ReaderWriter → io.Writer
 func (g *Gopher) WriteToWriter(f io.Writer) (int64, error) {
 ```
@@ -885,13 +865,14 @@ class: center, middle
 
 <div class="text-center mermaid">
 graph LR;
-    child(Child)-- 継承 -->parent(Parent);
+    c(Child)-- 継承 -->p(Parent);
 
-    style child fill:#1fc8db
-    style parent fill:#1fc8db
+    style c fill:#1fc8db
+    style p fill:#1fc8db
 </div>
 
 
+.left-split[
 
 ```java
 // Java
@@ -903,7 +884,9 @@ class Child extends Parent {
     public void say() { System.out.println("child"); }
 }
 ```
+]
 
+.right-split[
 ```python
 // python
 class Parent:
@@ -916,8 +899,10 @@ class Child(Parent):
     def say(self):
         print('child')
 ```
+]
 
-<button class="btn" onclick="player.open('/src/clz.java', '/src/clz.py');">Hello</button>
+
+<button class="btn btn-raised" onclick="player.open('/src/clz.java', '/src/clz.py');">Eval</button>
 
 
 ---
@@ -938,21 +923,16 @@ func (c Child) Hello() { println(c.say()) }
 
 ```
 
-<button class="btn" onclick="player.open('/src/clz.go');">Eval</button>
+<button class="btn btn-raised" onclick="player.open('/src/clz.go');">Eval</button>
 
 
 child の Hello() は "child" と出力するが、Print() は "parent" と出力します
-
-
 
 ---
 ## <i class="icon-go"></i> Class(クラス) Summary
 
 
-
 [Effectiive Go#Embedding](https://golang.org/doc/effective_go.html#embedding)
-
-
 
 Go does not provide the typical, type-driven notion of subclassing, ...
 
@@ -976,21 +956,16 @@ func (p *sayChild) Print() { println("child") }
 
 ```
 
+<button class="btn btn-raised" onclick="player.open('/src/clz_summary.go');">Eval</button>
 
 
 ---
 ## <i class="icon-ruby text-danger"></i> Ruby block variable
 
 ```ruby
-# code & result
 [1, 2, 3].each do |i|
     put i*2
 end
-
-# result
-1
-4
-9
 ```
 
 .text-right[
@@ -1012,6 +987,8 @@ class List
 end
 ```
 
+<button class="btn btn-raised" onclick="player.open('/src/blockvar.rb');">Eval</button>
+
 ---
 ## <i class="icon-go"></i> Ruby block variable: Example
 
@@ -1029,20 +1006,17 @@ func (pp People) Each(hfn func(i int, p Person)) {
 }
 
 func main() {
-   people := People{
-      Person{"tom"},
-      Person{"bom"},
-   }
+   people := People{ Person{"tom"}, Person{"bom"} }
 
    names := []string{}
-   people.Each(func(i int, p Persion) {
+   people.Each(func(i int, p Person) {
        names = append(names, p.Name)
    })
    println(strings.Join(names, ","))
 }
-
 ```
 
+<button class="btn btn-raised" onclick="player.open('/src/blockvar.go');">Eval</button>
 
 ---
 ## <i class="icon-go"></i> Ruby block variable: Summary
@@ -1050,6 +1024,34 @@ func main() {
 
 ---
 ## <i class="icon-javascript-alt" style="color:gold;"></i> <i class="icon-csharp text-success"></i> async, await
+
+
+<i class="icon-javascript-alt display-4" style="color:gold;"></i> の async/await
+
+- async : 非同期処理関数を定義する <a class="badge badge-pill badge-info" href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/async_function" target="_blank">async <i class="fa fa-external-link-alt"></i></a>
+- await : Promiseのresolve, reject の結果を待つ  
+awaitはasyncの関数内でしか使えない <a class="badge badge-pill badge-info" href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/await" target="_blank">async <i class="fa fa-external-link-alt"></i></a>
+
+
+<i class="icon-csharp text-success display-4"></i> の async/await
+
+- async <a class="badge badge-pill badge-info" href="https://docs.microsoft.com/ja-jp/dotnet/csharp/language-reference/keywords/async" target="_blank"> async <i class="fa fa-arrow-right"></i></a>
+- await <a class="badge badge-pill badge-info" href="https://docs.microsoft.com/ja-jp/dotnet/csharp/language-reference/keywords/await" target="_blank"> await  <i class="fa fa-external-link-alt"></i></a>
+
+
+---
+
+## async, await 非同期処理
+
+
+<div class="text-center mermaid">
+sequenceDiagram
+    Process ->> AsyncLogic: 非同期処理
+    AsyncLogic ->> BackendLogic1: 何かの処理
+    AsyncLogic ->> BackendLogic2: 何かの処理
+    Process ->> Process: 他の処理
+    Note right of Process: Text in note
+</div>
 
 
 ---
@@ -1259,7 +1261,29 @@ class: center, middle
 ---
 ## ReactiveX
 
-Observer, Iterator パターンと Functional Programming のアイデアを組み合わせたもの
+<div class="text-center mermaid">
+graph LR;
+    start((Start)) --> e1((Event1));
+    e1((Event1)) --> e2((Event2));
+    e2((Event2)) --> e3((Event3));
+    e3((Event3)) --> fin((Finish));
+
+    style start fill:#2cb5e8;
+    style fin fill:#2cb5e8;
+</div>
+
+
+
+* Observer, Iterator パターンと Functional Programming のアイデアを組み合わせたもの
+* 
+
+
+#### References
+
+- [ReactiveX](http://reactivex.io/)
+   - [リアクティブ宣言](https://www.reactivemanifesto.org/ja)
+- [RxGo github](https://github.com/ReactiveX/RxGo)
+
 
 ---
 ## ReactiveX Exmaple
@@ -1268,10 +1292,6 @@ Observer, Iterator パターンと Functional Programming のアイデアを組�
 ## ReactiveX Sumamry
 
 
-### References
-
-- [ReactiveX](http://reactivex.io/)
-- [RxGo github](https://github.com/ReactiveX/RxGo)
 
 
 ---
