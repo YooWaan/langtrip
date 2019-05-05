@@ -31,9 +31,14 @@ function initPlayer(elId){
 	$(e).tab('show');
   };
 
+  function resultText(txt) {
+	  document.querySelector('.player-code-result > pre > code').innerHTML = txt;
+  };
+
   function updateTab(tabs, codes) {
 	document.getElementById('myPlayerTabs').innerHTML = tabs;
 	document.getElementById('myPlayerCode').innerHTML = codes;
+	resultText('');
   };
   
   function open() {
@@ -67,11 +72,13 @@ function initPlayer(elId){
 	$('#player').hide();
   };
 
+  
   function run() {
 	var tab = document.querySelector('.tab-pane.active');
 	var lang = tab.getAttribute('code-lang');
 	var code = tab.querySelector('pre > textarea').value;
-	console.log(code);
+	resultText('');
+
 	fetch('/run', {
 	  method:'POST',
 	  cache: 'no-cache',
@@ -80,7 +87,8 @@ function initPlayer(elId){
 	}).then(function(res) {
 	  return res.text(); 
 	}).then(function(result) {
-	  document.querySelector('.player-code-result > pre > code').innerHTML = result;
+	  console.log(result);
+	  resultText(result);
 	});
   };
 

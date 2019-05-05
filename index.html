@@ -25,9 +25,10 @@
       .en, .badge {font-family: 'Yanone Kaffeesatz'; font-weight: normal;}
       .title-img img {width:200px;}
       .big {font-size:8rem;}
-      .strong {font-size:4rem;} .display-4 ol, .display-4 ul {line-height: 1.6em;}
+      .strong {font-size:4rem;}
+      .display-3 ol, .display-3 ul, .display-4 ol, .display-4 ul {line-height: 1.6em;}
       .inline-b {font-size:1.2em;}
-      
+
 
       .top-background {
         background-color: #1fc8db;
@@ -83,11 +84,23 @@
       float: right;
       }
 
-      
+
     /* slides */
     .history-text {font-size: 1.5rem;} .history-text i {font-size: 4rem;}
     .history-img {width:36px; height:36px;}
 
+	  /* player */
+	  #player {
+	  position:absolute;
+	  right: 5vw;
+	  z-index:10000;
+	  width:75vw;
+	  background-color:white;
+	  }
+	  .player-code-body {max-height:40vh; overflow-y:scroll; margin:4px;}
+	  .player-code-body pre {background-color:#CFCFCF;}
+	  .player-code-result pre {background-color:#111111; color:#FAFAFA; max-height:30vh; overflow-y:scroll;}
+	  .player-control { width: 100px ;position:relative; left:30vw;}
     </style>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -97,12 +110,18 @@
   </head>
   <body>
     <textarea id="source"></textarea>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<div id="player" class="border border-rounded"></div>
+
+
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
 
     <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
     <script src="js/mermaid.min.js"></script>
+	<script src="js/play.js"></script>
     <script>
       var slideshow = remark.create({
         ratio: '16:9',
@@ -116,12 +135,10 @@
         const [slide] = document.getElementsByClassName("remark-visible");
         mermaid.init(Array.from(slide.getElementsByClassName("mermaid")));
       });
-    </script>
-    <script>
       mermaid.initialize({startOnLoad:true});
+	  function hello() {console.log('Oh');}
+	  initPlayer('player');
     </script>
-    <script>
-function hello() {console.log('Oh');}
-    </script>
+
   </body>
 </html>

@@ -20,7 +20,7 @@ func main() {
 # comment
 ```
 
-<button onclick="player.open('/src/blockvar.rb', '/README.md');">Hello</button>
+<button onclick="player.open('/src/blockvar.rb', '/README.md');">Eval</button>
 
 <p><i class="material-icons">account_circle</i> Hello</p>
 
@@ -66,14 +66,14 @@ template: inverse
 	  <span class="badge badge-pill badge-dark">Dark</span>
 	</p>
   </div>
-  
+
   <div class="col-md-4">
 
     <i class="material-icons">mood_bad</i>
     <i class="material-icons">mood</i>
-    
-    <i class="fa fa-link"></i> 
-    <i class="fa fa-arrow-right"></i> 
+
+    <i class="fa fa-link"></i>
+    <i class="fa fa-arrow-right"></i>
   </div>
   <div class="col-md-4">
 
@@ -150,11 +150,13 @@ class: center, middle
 ]
 
 ---
-class: center, middle
+class: middle
 
 .display-2[
+.text-center[
 - どう書いたらいいのか？
 - どんな言語なのか？
+]
 ]
 
 <div class="row justify-content-center mb-4">
@@ -217,8 +219,6 @@ class: center, middle
 
 
 .big[
-前置きは終わりで
-
 始めていきます
 ]
 
@@ -239,9 +239,9 @@ class: center, middle
 ]
 
 .display-3[
-▶ Golangとは （認識）️ 
+▶ 不安の構成要素 (懸念事項)
 
-開発の要素 (懸念事項)
+Golangとは （認識）️
 
 始める準備 （取っ掛かり）
 ]
@@ -249,105 +249,30 @@ class: center, middle
 </div>
 </div>
 
-
 ---
-
-
-## Golang とは
-
-.history-text[
-<table class="table">
-  <tr>
-  <td>
-	<i class="icon-python text-success"></i><br/>
-	<i class="icon-java-duke"></i>
-  </td>
-  <td class="align-middle"><i class="icon-ruby text-danger"></i></td>
-  <td class="align-middle"><i class="icon-javascript-alt" style="color:gold;"></i></td>
-  <td></td>
-  <td class="align-middle"><i class="icon-csharp text-success"></i></td>
-  <td></td>
-  <td></td>
-  <td class="align-middle"><i class="icon-go text-info"></i></td>
-
-  <td class="align-middle"><img class="history-img"src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Kotlin-logo.png"/></td>
-  <td><img  src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Swift_logo.svg/40px-Swift_logo.svg.png"/></td>
-  <td></td>
-  </tr>
-<tr class="en">
-<td>1991</td>
-<td>1993</td>
-<td>1994</td>
-<td>1995</td>
-<td>2002</td>
-<td>2006</td>
-<td>2007</td>
-<td>2009</td>
-<td>2011</td>
-<td>2014</td>
-<td></td>
-</tr>
-  <tr>
-  <td></td>
-  <td></td>
-  <td><img class="history-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Sega-Saturn-Console-Set-Mk1.jpg/1920px-Sega-Saturn-Console-Set-Mk1.jpg"  /></td>
-  <td><img class="history-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/PSX-Console-wController.png/280px-PSX-Console-wController.png"/></td>
-  <td>3G</td>
-  <td><img class="history-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/PS3Versions.png/250px-PS3Versions.png"/></td>
-  <td>iPhone</td>
-  <td></td>
-  <td>4G</td>
-  <td></td>
-  <td></td>
-  </tr>
-</table>
-
-]
-
-
-<small>
-[プログラム年表 wikipediaより](https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E%E5%B9%B4%E8%A1%A8)
-</small>
-https://bridgera.com/5g-promises-new-horizons-for-iot/
-
-http://wiki.c2.com/?AntiPatternsCatalog
-https://dmitri.shuralyov.com/idiomatic-go
-
-
----
-
-## Golang とは
-
-
-
-* expressive
-* concise
-* clean
-* efficient
-
-
-<img src="images/what-is-golang.png" width="60%"/>
-
----
-## そもそもの話
-
-<div class="container border rounded">
-<div class="row fh ml-3 ml-3 mt-5" style="height:40vh;">
-.display-4[
-ものを認識 と 懸念事項 を考慮して 取っ掛かり の話
-]
+## 源泉を探る
 
 .display-3[
-✔️ Golangとは （認識）️ 
+エンジニアがやりたいこと
 
-▶ 開発の要素 (懸念事項)
-
-始める準備 （取っ掛かり）
+- ものを作りたい
+- 技法を適切に利用したい
+- 寄与したい心情(哲学・思想)を反映したい
 ]
 
-</div>
-</div>
+---
+## 源泉からの不安要素
 
+.display-4[
+- ものを作りたい
+> → 実装できるか？
+- 技法を適切に利用したい
+> → 技法の適用できるか？  
+> → Senior、Expert の威光（マウンティング）
+- 寄与したい心情(哲学・思想)を反映したい
+> → いままでの経験との折り合い  
+> → 慣習とのマッチ度
+]
 
 ---
 
@@ -435,6 +360,104 @@ TODO Things 2
 ]
 
 ---
+
+## Golang とは
+
+.history-text[
+<table class="table">
+  <tr>
+  <td>
+	<i class="icon-python text-success"></i><br/>
+	<i class="icon-java-duke"></i>
+  </td>
+  <td class="align-middle"><i class="icon-ruby text-danger"></i></td>
+  <td class="align-middle"><i class="icon-javascript-alt" style="color:gold;"></i></td>
+  <td></td>
+  <td class="align-middle"><i class="icon-csharp text-success"></i></td>
+  <td></td>
+  <td></td>
+  <td class="align-middle"><i class="icon-go text-info"></i></td>
+
+  <td class="align-middle"><img class="history-img"src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Kotlin-logo.png"/></td>
+  <td><img  src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Swift_logo.svg/40px-Swift_logo.svg.png"/></td>
+  <td></td>
+  </tr>
+<tr class="en">
+<td>1991</td>
+<td>1993</td>
+<td>1994</td>
+<td>1995</td>
+<td>2002</td>
+<td>2006</td>
+<td>2007</td>
+<td>2009</td>
+<td>2011</td>
+<td>2014</td>
+<td></td>
+</tr>
+  <tr>
+  <td></td>
+  <td></td>
+  <td><img class="history-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Sega-Saturn-Console-Set-Mk1.jpg/1920px-Sega-Saturn-Console-Set-Mk1.jpg"  /></td>
+  <td><img class="history-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/PSX-Console-wController.png/280px-PSX-Console-wController.png"/></td>
+  <td>3G</td>
+  <td><img class="history-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/PS3Versions.png/250px-PS3Versions.png"/></td>
+  <td>iPhone</td>
+  <td></td>
+  <td>4G</td>
+  <td></td>
+  <td></td>
+  </tr>
+</table>
+
+]
+
+
+<small>
+[プログラム年表 wikipediaより](https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E%E5%B9%B4%E8%A1%A8)
+</small>
+https://bridgera.com/5g-promises-new-horizons-for-iot/
+
+http://wiki.c2.com/?AntiPatternsCatalog
+https://dmitri.shuralyov.com/idiomatic-go
+
+
+---
+
+## Golang とは
+
+
+
+* expressive
+* concise
+* clean
+* efficient
+
+
+<img src="images/what-is-golang.png" width="60%"/>
+
+---
+## そもそもの話
+
+<div class="container border rounded">
+<div class="row fh ml-3 ml-3 mt-5" style="height:40vh;">
+.display-4[
+ものを認識 と 懸念事項 を考慮して 取っ掛かり の話
+]
+
+.display-3[
+✔️ Golangとは （認識）️
+
+▶ 開発の要素 (懸念事項)
+
+始める準備 （取っ掛かり）
+]
+
+</div>
+</div>
+
+
+---
 ## そもそもの話
 
 <div class="container border rounded">
@@ -445,7 +468,7 @@ TODO Things 2
 
 .display-3[
 
-✔️ Golangとは （認識）️ 
+✔️ Golangとは （認識）️
 
 ✔ 開発の要素 (懸念事項)
 
@@ -490,13 +513,13 @@ https://www.golang-book.com/books/intro
 - 不安に要素
 
    - senior,expert からのプレッシャー
-   - 
+   -
 
 
 - 何から始めたら
 
 
-- 
+-
 
 ---
 class: center, middle
@@ -725,7 +748,7 @@ func (p *Author) TextElem() (elems []Elem) {
 自明な短い名前を付けましょう  
 <span class="text-muted">Try to find the shortest name that is self explanatory</span>
 
-*  **MarshalWithIndentation** より **MarshalIndent** が好ましい 
+*  **MarshalWithIndentation** より **MarshalIndent** が好ましい
 
 package名は import を行ったで prefix として利用します  
 <span class="text-muted">Don't forget that the package name will appear before the identifier you chose. </span>
@@ -894,29 +917,65 @@ class Child(Parent):
         print('child')
 ```
 
+<button class="btn" onclick="player.open('/src/clz.java', '/src/clz.py');">Hello</button>
+
+
 ---
 ## <i class="icon-go"></i> Class(クラス) Example
 
 ```golang
+package main
+
 type Parent struct {}
 func (p Parent) say() string {return "parent" }
+func (p Parent) Print() { println(p.say())}
 func (p Parent) Hello() { println(p.say())}
 
 type Child struct { Parent }
 func (c Child) say() string {return "child" }
+// Print() は Parent の処理を実行する
+func (c Child) Hello() { println(c.say()) }
 
-func main() {
-    p := Parent{}
-    p.hello()
-    c := Child{}
-    c.hello()
-}
 ```
+
+<button class="btn" onclick="player.open('/src/clz.go');">Eval</button>
+
+
+child の Hello() は "child" と出力するが、Print() は "parent" と出力します
 
 
 
 ---
 ## <i class="icon-go"></i> Class(クラス) Summary
+
+
+
+[Effectiive Go#Embedding](https://golang.org/doc/effective_go.html#embedding)
+
+
+
+Go does not provide the typical, type-driven notion of subclassing, ...
+
+Golang サブクラスを提供していないので、interface を定義してそれを利用することを紹介してます
+
+
+```golang
+type Say interface {
+	Print()
+}
+
+type Person struct {
+	Say
+}
+
+type sayParent struct {}
+func (p *sayParent) Print() { println("parent") }
+
+type sayChild struct {}
+func (p *sayChild) Print() { println("child") }
+
+```
+
 
 
 ---

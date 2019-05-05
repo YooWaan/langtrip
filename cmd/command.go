@@ -3,8 +3,8 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"go/parser"
-	"go/token"
+	//"go/parser"
+	//"go/token"
 	"io"
 	"io/ioutil"
 	"log"
@@ -33,8 +33,10 @@ type CodeRunner func(string, io.Writer) error
 
 var (
 	coderRunners = map[string]CodeRunner{
-		"go": GoRun,
+		"go": tempRun("go", "run", "main.go"),
+		"java": tempRun("jshell", "-v", "main.java"),
 		"ruby": evaluator("ruby", "-e"),
+		"python": evaluator("python", "-c"),
 	}
 )
 
@@ -56,37 +58,30 @@ func evaluator(cmd, opt string) CodeRunner {
 	}
 }
 
-// see https://github.com/golang/playground/blob/master/sandbox.go#L291
-func GoRun(code string, w io.Writer) error {
-	tmpDir, err := ioutil.TempDir("", "sandbox")
-	if err != nil {
-		return fmt.Errorf("error creating temp directory: %v", err)
-	}
-	defer os.RemoveAll(tmpDir)
+// playground code see https://github.com/golang/playground/blob/master/sandbox.go#L291
+func tempRun(cmd, opt, tmp string) CodeRunner {
+	return func(code string, w io.Writer) error {
+		tmpDir, err := ioutil.TempDir("", "sandbox")
+		if err != nil {
+			return fmt.Errorf("error creating temp directory: %v", err)
+		}
+		defer os.RemoveAll(tmpDir)
 
-	src := []byte(code)
-	in := filepath.Join(tmpDir, "main.go")
-	if err := ioutil.WriteFile(in, src, 0400); err != nil {
-		return fmt.Errorf("error creating temp file %q: %v", in, err)
-	}
+		src := []byte(code)
+		in := filepath.Join(tmpDir, tmp)
+		if err := ioutil.WriteFile(in, src, 0400); err != nil {
+			return fmt.Errorf("error creating temp file %q: %v", in, err)
+		}
 
-	fset := token.NewFileSet()
+		log.Printf("%s run file %v", cmd, in)
+		out, err := exec.Command(cmd, opt, in).CombinedOutput()
+		if err != nil {
+			return err
+		}
 
-	f, err := parser.ParseFile(fset, in, nil, parser.PackageClauseOnly)
-	if err == nil && f.Name.Name != "main" {
-		return fmt.Errorf("error main func not found %v", code)
-	} else if err != nil {
-		return fmt.Errorf("error parse: %v", err)
-	}
-
-	log.Printf("go run file %v", in)
-	out, err := exec.Command("go", "run", in).CombinedOutput()
-	if err != nil {
+		_, err = io.Copy(w, bytes.NewBuffer(out))
 		return err
 	}
-
-	_, err = io.Copy(w, bytes.NewBuffer(out))
-	return err
 }
 
 
@@ -100,7 +95,9 @@ func commandRun(w http.ResponseWriter, r *http.Request) {
 	//log.Printf("[%v]run: %v", code.Lang, code.Code)
 	code := bind(r)
 	if r, ok := coderRunners[code.Lang]; ok {
-		r(code.Code, w)
+		if err := r(code.Code, w); err != nil {
+			fmt.Fprintf(w, "Error [%s]", err)
+		}
 	} else {
 		fmt.Fprintf(w, "Unsupported Language [%s]", code.Lang)
 	}
