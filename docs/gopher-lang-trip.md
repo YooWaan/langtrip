@@ -20,7 +20,7 @@ func main() {
 # comment
 ```
 
-<button onclick="hello();">Hello</button>
+<button onclick="player.open('/src/blockvar.rb', '/README.md');">Hello</button>
 
 <p><i class="material-icons">account_circle</i> Hello</p>
 
