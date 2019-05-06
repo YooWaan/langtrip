@@ -1091,24 +1091,28 @@ class Api {
 .right-split[
 
 ```python
-def api_option(fn, is_active = False):
-   ''' orginal function's argument not supported '''
-   if is_active == True:
-       def func_wrapper(name):
-          return "wrap[{0}]".format(fn(name))
-       return func_wrapper
-   return fn
+def api_option(fn):
+    def func_wrapper():
+        return "wrap[{0}]".format(fn())
+    return func_wrapper
 
-@api_option(is_active=True)
+@api_option
 def say():
     return 'say'
 
-@api_option
 def hello():
-    ''' no decrated function ''''
-    return hello'
+    ''' no decrated function '''
+    return 'hello'
 ```
 ]
+
+---
+## <i class="icon-java-duke"></i>  annotation, <i class="icon-python text-success"></i> decorator
+
+Java annotation
+
+Pyhon decorator
+
 
 ---
 ## <i class="icon-go"></i>  anotation, decorator: Example
