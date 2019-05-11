@@ -865,10 +865,8 @@ class: center, middle
 
 <div class="text-center mermaid">
 graph LR;
-    c(Child)-- 継承 -->p(Parent);
+    Child-- 継承 -->Parent;
 
-    style c fill:#1fc8db
-    style p fill:#1fc8db
 </div>
 
 
@@ -884,6 +882,9 @@ class Child extends Parent {
     public void say() { System.out.println("child"); }
 }
 ```
+
+<button class="btn btn-raised" onclick="player.open('/src/clz.java', '/src/clz.py');">Eval</button>
+
 ]
 
 .right-split[
@@ -900,9 +901,6 @@ class Child(Parent):
         print('child')
 ```
 ]
-
-
-<button class="btn btn-raised" onclick="player.open('/src/clz.java', '/src/clz.py');">Eval</button>
 
 
 ---
@@ -1041,6 +1039,54 @@ awaitはasyncの関数内でしか使えない <a class="badge badge-pill badge-
 
 ---
 
+## <i class="icon-javascript-alt" style="color:gold;"></i> <i class="icon-csharp text-success"></i> async, await 非同期処理
+
+
+.left-split[
+
+```js
+function wait(waitSec) {
+  return new Promise(resolve => {
+    setTimeout(_ => {
+      resolve(`resolved:${waitSec}`);
+    }, waitSec);
+  });
+}
+
+async function awaitNumsWait(nums) {
+  while ( (num = nums.shift()) !== undefined ) {
+    const result = await wait(num);
+    console.log(`await [${result}]`);
+  }
+}
+
+async function asyncNumsWait(nums) {
+  Promise.all(nums.map(n => {
+    return wait(n);
+  })).then(values => {
+	return console.log('asyncDone::' +values.join(','));
+  });
+}
+```
+]
+
+.right-split[
+```js
+async function awaitAndAsyncCall(nums) {
+  asyncNumsWait(nums);
+  awaitNumsWait(nums);
+  return 'awaitAndAsyncCall::done';
+}
+
+const nums = [2000, 1000, 1500];
+awaitAndAsyncCall(nums).then((msg) => {
+  console.log(msg);
+});
+```
+]
+
+---
+
 ## async, await 非同期処理
 
 
@@ -1057,8 +1103,70 @@ sequenceDiagram
 ---
 ## <i class="icon-go"></i> async, await: Example
 
+.left-split[
+
+```golang
+func asyncFunc(sleep time.Duration, start time.Time) {
+	time.Sleep(sleep)
+	elapsed("async", start)
+}
+
+func awaitFunc(wg *sync.WaitGroup, sleep time.Duration, start time.Time) {
+	defer wg.Done()
+	// do somethig
+	time.Sleep(sleep)
+	elapsed("await", start)
+}
+
+```
+]
+
+
+.right-split[
+
+```golang
+func main() {
+	start := time.Now()
+	nums := []time.Duration{ 2 * time.Second, time.Second, 1500 * time.Millisecond }
+	
+	// async finished
+	for _, sec := range nums {
+		go asyncFunc(sec, start)
+	}
+
+	// await
+	await := new(sync.WaitGroup)
+	for _, sec := range nums {
+		await.Add(1)
+		go awaitFunc(await, sec, start)
+	}
+	await.Wait()
+
+	println("finish")
+}
+```
+]
+
 ---
 ## <i class="icon-go"></i> async, await: Summary
+
+
+<span class="bg-info h1">async</span>
+
+* go routine で実行すれば大丈夫
+* 待たないとそのままプロセスが終わります
+
+<span class="bg-info h1">await</span>
+
+* 標準パッケージの WaitGroup を利用すれば大丈夫
+* 1つの処理なら単純に関数をそのまま呼ぶ
+
+
+<span class="bg-info h1"> <i class="icon-go"></i> golang </span>
+
+* 
+
+
 
 ---
 ## <i class="icon-java-duke"></i>  annotation, <i class="icon-python text-success"></i> decorator
@@ -1110,6 +1218,10 @@ def hello():
 ## <i class="icon-java-duke"></i>  annotation, <i class="icon-python text-success"></i> decorator
 
 Java annotation
+
+
+---
+## <i class="icon-java-duke"></i>  annotation, <i class="icon-python text-success"></i> decorator
 
 Pyhon decorator
 

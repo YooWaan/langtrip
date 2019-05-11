@@ -95,7 +95,12 @@
        float: right;
       }
 
-
+	 /* mermaid js */
+     .node rect{
+        stroke:#1fc8db;
+        fill:#1fc8db;
+     }
+	 
      /* slides */
      .history-text {font-size: 1.5rem;} .history-text i {font-size: 4rem;}
      .history-img {width:36px; height:36px;}
@@ -118,8 +123,6 @@
 	 .player-code-result pre {background-color:#111111; color:#FAFAFA; max-height:30vh; overflow-y:scroll;}
 	 .player-control { position:relative; left:30vw;}
 
-
-     
     </style>
 
   </head>
@@ -151,7 +154,6 @@
         mermaid.init(Array.from(slide.getElementsByClassName("mermaid")));
       });
       mermaid.initialize({startOnLoad:true});
-	  function hello() {console.log('Oh');}
 	  initPlayer('player');
     </script>
 

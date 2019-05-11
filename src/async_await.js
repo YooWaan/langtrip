@@ -1,33 +1,30 @@
 function wait(waitSec) {
   return new Promise(resolve => {
-    setTimeout(() => {
-      resolve('resolved');
+    setTimeout(_ => {
+      resolve(`resolved:${waitSec}`);
     }, waitSec);
   });
 }
 
-async function asyncCall(num) {
-  console.log('calling:' + num);
-  wait(num).then((value) => {
-    // expected output: 'resolved'
-    console.log(`async [${num}]` + value);
+async function awaitNumsWait(nums) {
+  while ( (num = nums.shift()) !== undefined ) {
+    const result = await wait(num);
+    console.log(`await [${result}]`);
+  }
+}
+
+async function asyncNumsWait(nums) {
+  Promise.all(nums.map(n => {
+    return wait(n);
+  })).then(values => {
+	return console.log('asyncDone::' +values.join(','));
   });
 }
 
 async function awaitAndAsyncCall(nums) {
-
-  while ( (num = nums.shift()) !== undefined ) {
-    console.log('await:' + num);
-    const result = await wait(num);
-    console.log(`await [${num}]` + result);
-  }
-
-  nums.forEach((n) => {
-    // async
-    asyncCall(n);
-  });
-
-  return await wait(3000);
+  asyncNumsWait(nums);
+  awaitNumsWait(nums);
+  return 'awaitAndAsyncCall::done';
 }
 
 const nums = [2000, 1000, 1500];
