@@ -118,7 +118,11 @@ template: inverse
 ---
 class: center, middle
 
-.big[先に]
+.big[
+先に  
+お約束の  
+いつもの
+]
 
 ---
 class: middle
@@ -195,6 +199,16 @@ class: center, middle, eye-bg
 大丈夫です
 ]
 
+---
+class: center, middle, eye-bg
+
+.strong[
+旅
+
+設定です
+]
+
+(謎)
 
 ---
 
@@ -849,7 +863,7 @@ import (
 
 ---
 
-## 小まとめ
+## <span class="bg-info">小まとめ</span>
 
 
 ---
@@ -1096,7 +1110,7 @@ sequenceDiagram
     AsyncLogic ->> BackendLogic1: 何かの処理
     AsyncLogic ->> BackendLogic2: 何かの処理
     Process ->> Process: 他の処理
-    Note right of Process: Text in note
+    Note right of Process: 非同期処理を待たなければ、プロセスは終わる
 </div>
 
 
@@ -1166,8 +1180,6 @@ func main() {
 
 * 
 
-
-
 ---
 ## <i class="icon-java-duke"></i>  annotation, <i class="icon-python text-success"></i> decorator
 
@@ -1215,15 +1227,65 @@ def hello():
 ]
 
 ---
-## <i class="icon-java-duke"></i>  annotation, <i class="icon-python text-success"></i> decorator
+## <i class="icon-java-duke"></i>  annotation
 
-Java annotation
+<div class="text-center mermaid">
+graph LR;
+	start((Start)) --> cb[Call API];
+	cb --> ann{Annotation?}
+	ann --> |yes| do[Related Annotation logic]
+	ann --> |no| no[not work]
+	do --> fin((End));
+	no --> fin((End));
+
+    style start fill:#2cb5e8;
+    style fin fill:#2cb5e8;
+</div>
+
+```java
+class Caller {
+    public void call(Object instance, String methodName) {
+        try {
+            Method method = instance.getClass().getMethod(methodName);
+            Option option = method.getAnnotation(Option.class);
+            String result = option.isActive()
+                ? String.format("warp[%s]", method.invoke(instance))
+                : method.invoke(instance).toString();
+            
+            System.out.println("Result[" + result + "]");
+        } catch (Throwable cause) {
+            throw new RuntimeException(cause);
+        }
+    }
+}
+```
 
 
 ---
-## <i class="icon-java-duke"></i>  annotation, <i class="icon-python text-success"></i> decorator
+## <i class="icon-python text-success"></i> decorator
 
-Pyhon decorator
+
+<div class="text-center mermaid">
+graph LR;
+	start((Start)) --> cb[Call API];
+	cb --> wrap[Run wrapped code];
+	wrap --> fn[Run original function code];
+	fn --> fin((End));
+
+    style start fill:#2cb5e8;
+    style fin fill:#2cb5e8;
+</div>
+
+```python
+def api_option(fn):
+    def func_wrapper():
+        return "wrap[{0}]".format(fn())
+    return func_wrapper
+
+@api_option
+def say():
+    return 'say'
+```
 
 
 ---
@@ -1256,7 +1318,19 @@ type Api struct {
 
 
 ---
-## <i class="icon-go"></i>  anotation, decorator: Sumamry
+## <i class="icon-go"></i>  anotation, decorator: Summary
+
+<span class="bg-info h1">annotation</span>
+
+* struct tag で振る舞いを変更できる
+* ※ 例は良くないので忘れてください  
+  encoding/json とかを参照ください
+
+<span class="bg-info h1">decorator</span>
+
+* Function Adapterで大丈夫
+
+
 
 ---
 ## <i class="icon-java-duke"></i>  interface, <i class="icon-python text-success"></i> duck typing
@@ -1266,67 +1340,142 @@ type Api struct {
 
 ```java
 interface Animal {
-    void run() throws RuntimeException
+    void run();
 }
 
 class Dog implements Animal {
     @Override
-    public void run() throws RuntimeException {
+    public void run() {
         System.out.println("wow");
     }
 }
 
 class Cat implements Animal {
     @Override
-    public void run() throws RuntimeException {
+    public void run() {
         System.out.println("miao");
     }
 }
 
-public class Main {
-
-    publc static void main(String[] args) {
-        Animal dog = new Dog();
-        Animal cat = new Cat();
-        dog.run();
-        cat.run()
-    }
-}    
-
+Animal dog = new Dog();
+Animal cat = new Cat();
+dog.run();
+cat.run()
 ```
 ]
 
 .right-split[
 
 ```python
-# anima.run
+'''
+class Animal(metaclass=ABCMeta):
+
+    @abstractmethod
+    def run(self):
+        pass
+
+class Dog(Animal):
+
+    def run(self):
+        print('wow')
+'''
 
 class Dog:
 
    def run():
        print('wow')
 
-class Dog:
+class Cat:
 
    def run():
-       print('wow')
+       print('miao')
 
 
-dog = new Dog
-cat = new Cat
-
-dog.run
-cat.run
+Dog().run()
+Cat().run()
 
 ```
 ]
 
 
 ---
+
 ## <i class="icon-go"></i> interface, duck typing: Example
+
+.left-split[
+
+```golang
+// Animal interface
+type Animal interface {
+	Run()
+}
+
+// Dog
+type Dog struct{}
+func (d Dog) Run() { println("wow") }
+
+// Cat
+type Cat struct{}
+func (c Cat) Run() { println("miao") }
+
+// Runnable interface
+type Runnable interface {
+	Run()
+}
+
+type Show struct{}
+func (s Show) Run() { println("show")}
+type Update struct{}
+func (u Update) Run() { println("update")}
+```
+]
+
+
+.right-split[
+
+```golang
+func main() {
+	println("-- Animal --")
+	var animal Animal
+	animal = new(Dog)
+	animal.Run()
+	animal = new(Cat)
+	animal.Run()
+
+	println("-- Runnable --")
+	var run Runnable
+	run = new(Show)
+	run.Run()
+	run = new(Update)
+	run.Run()
+
+	println("-- Duck Typing --")
+	run = new(Dog)
+	run.Run()
+	animal = new(Show)
+	animal.Run()
+}
+```
+]
+
 
 ---
 ## <i class="icon-go"></i> interface, duck typing: Summary
+
+<span class="bg-info h1">Interface</span>
+
+* 呼び出し側へ明示的に関数の定義を公開できる
+* 実装対象の責務範囲を明確にできる
+
+<span class="bg-info h1">DuckTyping</span>
+
+* 呼び出し側は対象が何に対してのものか？理解する
+* 実装対象は曖昧に実装が可能
+
+---
+
+## <span class="bg-info">小まとめ</span>
+
 
 
 ---
@@ -1342,7 +1491,7 @@ class: center, middle
 データに集合対して
 
 * 標準化した方式で賭合わせを可能にした技術
-* 言語レベルで高階関数を利用して賭合わせできるもの
+* 言語レベルで高階関数を利用して問い合わせできるもの
 
 ```csharp
   // Specify the data source.
@@ -1365,13 +1514,181 @@ class: center, middle
 - [C# Programming concepts](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/)
 - go-linq [godoc](https://godoc.org/github.com/ahmetb/go-linq) / [github](https://github.com/ahmetb/go-linq)
 
+https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries
+
+---
+## Linq　Java
+
+```java
+Function<IntStream,String> join = (s) -> {
+	return String.join(",",
+					   s.mapToObj(Integer::toString)
+					   .collect(Collectors.toList()));
+};
+
+int[] data = IntStream.range(1, 10).toArray();
+
+IntStream linq = IntStream.of(data);
+System.out.println("data    : " + join.apply(linq));
+
+linq = IntStream.of(data).filter(i -> i > 4);
+System.out.println("filtered: " + join.apply(linq));
+```
 
 ---
 ## Linq　Example
 
+.left-split[
+
+```go
+type itr func() (int, bool)
+
+func from(data []int) query {
+	len := len(data)
+	return query{
+		itr: func() itr {
+			index := 0
+			return func() (int, bool) {
+				ok := index < len
+				val := 0
+				if ok {
+					val = data[index]
+					index++
+				}
+				return val, ok
+			}
+		},
+	}
+}
+```
+]
+
+.right-split[
+```go
+type query struct {
+	itr func() itr
+}
+
+// map,select is reserved word
+func (q query) selectBy(mapFn func(int) int) query {
+	return query{
+		itr: func() itr {
+			next := q.itr()
+			return func() (int, bool) {
+				ret, ok := next()
+				if ok {
+					ret = mapFn(ret)
+				}
+				return ret, ok
+			}
+		},
+	}
+}
+```
+]
+
+---
+## Linq Example
+
+.left-split[
+```go
+func (q query) where(filter func(i int) bool) query {
+	return query{
+		itr: func() itr {
+			next := q.itr()
+			return func() (int, bool) {
+				var (
+					val int
+					ok  bool
+				)
+				for val, ok = next(); ok; val, ok = next() {
+					if filter(val) {
+						return val, ok
+					}
+				}
+				return val, ok
+			}
+		},
+	}
+}
+```
+]
+
+.right-split[
+
+```go
+func (q query) orderBy(less func(i, j int) bool) query {
+	var nums []int
+	q.apply(&nums)
+	sort.Sort(sorter{nums: nums, less: less})
+	return from(nums)
+}
+
+type nums []int
+func (ns nums) Len() int      { return len(ns) }
+func (ns nums) Swap(i, j int) { ns[i], ns[j] = ns[j], ns[i] }
+
+type sorter struct {
+	nums
+	less func(i, j int) bool
+}
+func (s sorter) Less(i, j int) bool {
+	return s.less(s.nums[i], s.nums[j])
+}
+```
+
+]
+
+---
+## Linq Example
+
+
+
+.left-split[
+<div class="text-center mermaid">
+graph TD;
+    start((data)) --> f1[selectBy next * 2];
+    f1 --> f2[where next > 50];
+    f2 --> odr[orderBy  sort DESC];
+    odr --> fin((Finish));
+
+    style start fill:#2cb5e8;
+    style fin fill:#2cb5e8;
+</div>
+]
+
+.right-split[
+
+```go
+
+func main() {
+	data := []int{1, 10, 43, 28, 32, 5}
+	var values []int
+	from(data).apply(&values)
+	fmt.Println("data: ", values)
+
+	var selectValues []int
+	from(data).selectBy(func(num int) int {
+		return num * 2
+	}).where(func(num int) bool {
+		return num >= 50
+	}).orderBy(func(i, j int) bool {
+		// DESC
+		return i > j
+	}).apply(&selectValues)
+	fmt.Println("select data: ", selectValues)
+}
+```
+]
 
 ---
 ## Linq　Summary
+
+<span class="bg-info h1"><i class="icon-go"></i>golang</span>
+
+* 言語標準での実装は無い
+* <code>go get</code> で取得しては利用可能
+
 
 
 ---
@@ -1403,6 +1720,49 @@ graph LR;
 
 ---
 ## ReactiveX Exmaple
+
+.left-split[
+
+```go
+func main() {
+	ticker := time.NewTicker(time.Second)
+	defer ticker.Stop()
+	value := make(chan bool)
+	done := make(chan bool)
+
+	go func() {
+		defer func() { done <- true }()
+		num := 0
+		for {
+			select {
+			case <-value:
+				num++
+				if num >= 10 {
+					return
+				} else {
+					fmt.Println("wait...[", num, "]")
+				}
+			}
+		}
+	}()
+```
+]
+
+.right-split[
+```go
+	for {
+		select {
+		case <-done:
+			fmt.Println("Done!")
+			return
+		case t := <-ticker.C:
+			fmt.Println("Current time: ", t.Format("15:04:05"))
+			value <- true
+		}
+	}
+}
+```
+]
 
 ---
 ## ReactiveX Sumamry
