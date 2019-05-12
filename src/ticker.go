@@ -6,34 +6,46 @@ import (
 )
 
 func main() {
-	ticker := time.NewTicker(time.Second)
-	defer ticker.Stop()
-	value := make(chan bool)
-	done := make(chan bool)
+	value := make(chan int)
+	score := 0
 
+	// score updater
 	go func() {
-		defer func() { done <- true }()
-		num := 0
 		for {
 			select {
-			case <-value:
-				num++
-				if num >= 10 {
-					return
+			case n, ok := <-value:
+				if ok {
+					score += n
 				} else {
-					fmt.Println("wait...[", num, "]")
+					score *= 2
+					return
 				}
 			}
 		}
 	}()
+
+	ticker := time.NewTicker(time.Second)
+	defer ticker.Stop()
+	loop := 0
+	loopEnd := 5
+outer:
 	for {
 		select {
-		case <-done:
-			fmt.Println("Done!")
-			return
 		case t := <-ticker.C:
-			fmt.Println("Current time: ", t.Format("15:04:05"))
-			value <- true
+			if loop >= loopEnd {
+				if loop > loopEnd {
+					break outer
+				} else {
+					loop++
+					close(value)
+				}
+			} else {
+				loop++
+				fmt.Println("Current time: ", t.Format("15:04:05"))
+				value <- loop
+			}
 		}
 	}
+
+	fmt.Println("score:", score)
 }
