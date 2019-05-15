@@ -1764,6 +1764,182 @@ func main() {
 ```
 ]
 
+
+---
+## ReactiveX Exmaple
+
+.left-split[
+
+```go
+type (
+	Next  func(interface{})
+	Done  func()
+	Error func(error)
+
+	observable <-chan interface{}
+
+	iterable <-chan interface{}
+)
+
+func (it iterable) Next() (interface{}, error) {
+	if next, ok := <-it; ok {
+		return next, nil
+	}
+	return nil, ErrEndOfInterator
+}
+
+// Event Handlers
+type observer struct {
+	next Next
+	done Done
+	err  Error
+}
+```
+]
+
+.right-split[
+
+```go
+func (o observable) subscribe(ob observer) chan subscription {
+	done := make(chan subscription)
+	sub := subscription{}
+
+	go func() {
+	OuterLoop:
+		for item := range o {
+			switch item := item.(type) {
+			case error:
+				ob.err(item)
+				sub.Error = item
+				break OuterLoop
+			default:
+				ob.next(item)
+			}
+		}
+
+		if sub.Error == nil {
+			ob.done()
+		}
+		done <- sub.End()
+	}()
+
+	return done
+}
+
+```
+]
+
+---
+## ReactiveX Example
+
+.left-split[
+
+```go
+func just(items ...interface{}) observable {
+	source := make(chan interface{})
+	go func() {
+		for _, item := range items {
+			source <- item
+		}
+		close(source)
+	}()
+
+	return observable(source)
+}
+```
+
+]
+
+.right-split[
+
+```go
+func from(it iterable) observable {
+	source := make(chan interface{})
+	go func() {
+		for {
+			val, err := it.Next()
+			if err != nil {
+				break
+			}
+			source <- val
+		}
+		close(source)
+	}()
+	return observable(source)
+}
+```
+
+]
+
+---
+## ReactiveX Example
+
+
+.left-split[
+
+```go
+func justSubscribe() {
+	score := 0
+
+	observer := handler(
+		// next
+		func(n interface{}) {
+			if num, ok := n.(int); ok {
+				score += num
+			}
+		},
+		// done
+		func() {
+			score *= 2
+		},
+	)
+	sub := just([]interface{}{1, 2, 3, 4, 5}).subscribe(observer)
+	<-sub
+
+	fmt.Println("score:", score)
+	close(sub)
+}
+```
+
+]
+
+.right-split[
+
+```go
+func ticker() {
+	score := 0
+	observer := handler(/* same code */)
+	value := make(chan interface{})
+	itr, _ := toItr(value)
+	sub := from(itr).subscribe(observer)
+	defer close(sub)
+
+	ticker := time.NewTicker(time.Second)
+	go func() {
+		defer ticker.Stop()
+		num := 0
+		for {
+			select {
+			case t := <-ticker.C:
+				num++
+				fmt.Println("Current time: ", t.Format("15:04:05"), ",num:", num)
+				if num > 5 {
+					close(value)
+					return
+				}
+				value <- num
+			}
+		}
+	}()
+	<- sub
+	fmt.Println("score:", score)
+}
+```
+
+
+]
+
+
 ---
 ## ReactiveX Sumamry
 
