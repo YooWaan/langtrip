@@ -2,8 +2,8 @@ package main
 
 import (
 	"bytes"
-	"fmt"
 	"encoding/json"
+	"fmt"
 	"io"
 	"io/ioutil"
 	"log"
@@ -35,6 +35,7 @@ var (
 		"java":   tempRun("jshell", "-v", "main.java"),
 		"ruby":   evaluator("ruby", "-e"),
 		"python": evaluator("python", "-c"),
+		"js":     evaluator("node", "-e"),
 	}
 )
 

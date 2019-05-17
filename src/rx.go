@@ -50,7 +50,7 @@ func handler(n Next, d Done) observer {
 	return observer{next: n, done: d, err: defaultError}
 }
 
-func (o observable) subscribe(ob observer) chan subscription {
+func (o observable) subscribe(ob observer) <-chan subscription {
 	done := make(chan subscription)
 	sub := subscription{}
 
@@ -125,11 +125,11 @@ func justSubscribe() {
 			score *= 2
 		},
 	)
-	sub := just([]interface{}{1, 2, 3, 4, 5}).subscribe(observer)
+	data := []interface{}{1, 2, 3, 4, 5}
+	sub := just(data...).subscribe(observer)
 	<-sub
 
 	fmt.Println("score:", score)
-	close(sub)
 }
 
 func from(it iterable) observable {
@@ -170,7 +170,6 @@ func ticker() {
 		return
 	}
 	sub := from(itr).subscribe(observer)
-	defer close(sub)
 
 	ticker := time.NewTicker(time.Second)
 	go func() {

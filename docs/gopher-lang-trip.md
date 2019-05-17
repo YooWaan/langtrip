@@ -1,127 +1,65 @@
 name: top
 class: center, middle, top-background
 
-<h1 style="line-height:1.5em; font-size:6rem;">Gopher と行く<br/> Lang な旅</h1>
+<h1 style="line-height:1.5em; font-size:6rem;">.en[Gopher] と行く .en[Lang] な旅</h1>
 
 <br/>
 
 .title-img[![gopher](images/gophercolor.png)]
 
+<p class="h2 en">Go Conference 2019 Spring</p> <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+<img alt="クリエイティブ・コモンズ・ライセンス" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+</a>
+<br />
 
----
-
-# Pre test
-
-
-```golang
-func main() {
-   println("hello")
-}
-# comment
-```
-
-<button onclick="player.open('/src/blockvar.rb', '/README.md');">Eval</button>
-
-<p><i class="material-icons">account_circle</i> Hello</p>
-
-<div class="center">
-<button class="badge badge-pill pl-5 pr-5 pt-3 pb-3">Border </button>
-</div>
-
----
-template: inverse
-
-## How does it work, then?
-
----
-
-# Components
-
-
-<div class="row mb-4">
-
-  <div class="col-md-4">
-
-    <div class="card">
-      <div class="card-header">
-        Featured
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Hello</h5>
-        <p class="card-text">
-        Detail xxxxxxxx
-        </p>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<div class="row mb-4">
-
-  <div class="col-md-4 mb-4">
-	<p class="h1">
-	  <span class="badge badge-pill badge-info">Info</span>
-	  <span class="badge badge-pill badge-light">Light</span>
-	  <span class="badge badge-pill badge-dark">Dark</span>
-	</p>
-  </div>
-
-  <div class="col-md-4">
-
-    <i class="material-icons">mood_bad</i>
-    <i class="material-icons">mood</i>
-
-    <i class="fa fa-link"></i>
-    <i class="fa fa-arrow-right"></i>
-  </div>
-  <div class="col-md-4">
-
-  </div>
-
-</div>
+<small>これは <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">クリエイティブ・コモンズ 表示 4.0 国際 ライセンス</a>の下に提供されています。</small>
 
 ---
 
 ## <span class="en">Introduction</span>
 
-<div class="row mt-5 mb-4">
-  <div class="col-md-3">
-  <h2>Name:</h2>
-  </div>
-  <div class="col-md-9">
-  <h2>xxxxxxxxx</h2>
-  </div>
-</div>
+.left-split[
+#### <span class="en">Profile</span>
 
-### Details
+```bash
+ name       Ryo Terunuma
+ handlename YooWaan
+                 `-- Game / Twitter / Qiita
+ company    BrainPad
+                 `-- p 大文字
+ role       Engineering Manager
+```
 
-.display-2[
-- <span><i class="material-icons align-middle">location_city</i> aaaa</span>
-- <span><i class="material-icons align-middle">perm_identity</i> エンジニアリングマネージャー</span>
-   - <span><i class="material-icons align-middle">assignment_ind</i> 開発部基盤チーム</span>
+#### <span class="en">Details</span>
+
+```bash
+$ Infra | Backend | Front
+$ Member | TeamLead | Manager
+```
+
+#### <span class="en">Develop   </span>
+
+
+```bash
+$ Platform System
+```
+
 ]
 
-<div class="row mb-4">
-  <div class="col-md-8">
-	<p class="h1">
-	  <span class="badge badge-pill badge-info">Info</span>
-	  <span class="badge badge-pill badge-light">Light</span>
-	  <span class="badge badge-pill badge-dark">Dark</span>
-	</p>
-  </div>
-  <div class="col-md-4">
-  <p class="bubble">aaaa</p>
-  </div>
-</div>
+.right-split[
+
+<a href="https://www.brainpad.co.jp/" target="_blank">
+<img src="images/brainpad.png" width="90%"/>
+</a>
+]
 
 ---
 class: center, middle
 
 .big[
 先に  
-お約束の  
-いつもの
+いつもの  
+お約束
 ]
 
 ---
@@ -140,6 +78,8 @@ class: middle
 
 .text-center[
 よろしくお願いします
+
+必ず採用担当までは,お繋ぎします
 ]
 
 ---
@@ -164,7 +104,7 @@ class: middle
 ]
 
 <div class="row justify-content-center mb-4">
-  <div class="col-md-5" >
+  <div class="col-md-5 text-center" >
   <p class="bubble display-2" style="width:420px;">不安を解決</p>
  </div>
 </div>
@@ -175,11 +115,11 @@ class: middle
 ---
 class: center, middle
 
-## <span class="en">Beginer</span> 向けコンテンツになります
+## <span class="en">Beginner</span> 向けコンテンツになります
 
 
 <p class="strong">
- <span class="badge badge-pill badge-primary"> ★ </span> <span class="text-primary">Junior</span>
+ <span class="badge badge-pill badge-primary"> ★ </span> <span class="text-primary">Junior / Beginner</span>
 </p>
 
 .display-2[
@@ -200,6 +140,23 @@ class: center, middle, eye-bg
 ]
 
 ---
+class: center, middle
+
+# Junior / Beginner
+
+.display-4[
+<br>
+
+完全な初心者を想定していません
+
+なんらかのプログラム(アプリケーション)を
+
+書いたことがある事を
+
+想定しています
+]
+
+---
 class: center, middle, eye-bg
 
 .strong[
@@ -215,165 +172,51 @@ class: center, middle, eye-bg
 # 📜 概要
 
 .display-4[
-1. そもそもの話
-    - Golang の基本的なことを見ていきます
-2. BestPractice12の紹介とそのTips
-    - Golang の基本的なことを見ていきます
-3. 各言語 (Each Language) のTips
-    - 各言語の特徴（**筆者の主観**）をGoで書くとどうなるか
-	   - <span class="en">Ruby / Python / Java / Javascript / C#</span>
-4. 実装手法 (Implementation) のTips
-    - 今まであったトレンド（**筆者の主観**）でGoで書くとどうなるか
-	   - <span class="en">Linq / ReactiveX</span>
+1. 旅立ち 編
+   - Gopher <i class="icon-go"></i> と準備と旅立ち
+2. Golang な旅 編
+   - Twelve Go Best Practices の紹介
+3. Lang な旅 編
+   - いろんな言語で楽しむ <span class="bg-warning small">&dagger;</span> <span class="en">(Ruby / Python / Java / Javascript / C#)</span>
+4. 過去の Trend な旅 編
+   - 今まであったトレンド名所巡り <span class="bg-warning small">&dagger;</span> <span class="en">(Linq / ReactiveX)</span>
+5. We are one peace （まとめ <span class="small">旅の終わり</span>）
 ]
 
-
-
----
-class: center, middle
-
-
-.big[
-始めていきます
-]
+<span class="bg-warning small">&dagger;</span>（筆者の主観）
 
 ---
 class: center, middle
 
 .big[
-そもそもの話
+旅立ち編
 ]
 
 ---
-## そもそもの話
+class: center, eye-bg
 
-<div class="container border rounded">
-<div class="row fh ml-3 ml-3 mt-5" style="height:40vh;">
-.display-4[
-ものを認識 と 懸念事項 を考慮して 取っ掛かり の話
-]
+.big[
+まず
 
-.display-3[
-<i class="material-icons text-secondary">assistant_photo</i> 不安の構成要素 (懸念事項)
-
-<i class="material-icons text-secondary">assistant_photo</i> Golangとは （認識)
-
-<i class="material-icons text-secondary">assistant_photo</i> 始める準備 （取っ掛かり）
-]
-
-</div>
-</div>
-
----
-## 源泉を探る
-
-.display-3[
-エンジニアがやりたいこと
-
-- ものを作りたい
-- 技法を適切に利用したい
-- 寄与したい心情(哲学・思想)を反映したい
-]
-
----
-## 源泉からの不安要素
-
-.display-4[
-- ものを作りたい
-> → 実装できるか？
-- 技法を適切に利用したい
-> → 技法の適用できるか？  
-> → Senior、Expert の威光（マウンティング）
-- 寄与したい心情(哲学・思想)を反映したい
-> → いままでの経験との折り合い  
-> → 慣習とのマッチ度
-]
-
----
-
-## 開発の生産性
-
-.display-4[
-* ものを作る
-
-* 設計・実装スキル
-
-* TODO
-]
-
----
-
-.left-column[
-  ### ものを作る
-]
-.right-column[
-
-早くコーディング
-
-- 理解しやすさ
-- 冗長にならない書きやすさ
-- IDE, Eco System
-
-
-早く環境構築
-
-- オーサリング
-- モジュール管理
-
-早くローンチ,デリバリー
-
-- Build
-- Test
-- Deploy
+Gopher に会う
 ]
 
 
 ---
 
-.left-column[
-  ### ものを作る
-  ### 設計・実装スキル
+## <i class="icon-go"></i> Golang とは
+
+
+* expressive ... 表現が豊かで
+* concise ... 簡潔で
+* clean ... キレイで
+* efficient ... 無駄がない(効率がいい)
+
+<br/>
+
+.text-center[
+<img src="images/what-is-golang.png" width="60%"/>
 ]
-.right-column[
-
-xxx指向
-
-- OOP,FP
-- ドメイン駆動
-- and more
-
-Lang
-
-- Syntax Sugar
-- Idiom
-
-<i class="material-icons">mood_bad</i> Senior, Expert からのプレッシャー
-
-- 設計がぁー
-- こっちの言語だとホゲホゲだけど、 Golangではフガフガがぁー
-
-]
-
----
-
-.left-column[
-  ### ものを作る
-  ### 設計・実装スキル
-  ### TODO
-]
-.right-column[
-
-TODO Things 1
-
-- xxxx
-
-TODO Things 2
-
-- one
-- two
-
-]
-
 ---
 
 ## Golang とは
@@ -394,7 +237,7 @@ TODO Things 2
   <td class="align-middle"><i class="icon-go text-info"></i></td>
 
   <td class="align-middle"><img class="history-img"src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Kotlin-logo.png"/></td>
-  <td><img  src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Swift_logo.svg/40px-Swift_logo.svg.png"/></td>
+  <td class="align-middle"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Swift_logo.svg/40px-Swift_logo.svg.png"/></td>
   <td></td>
   </tr>
 <tr class="en">
@@ -427,105 +270,161 @@ TODO Things 2
 
 ]
 
+参考リンク
 
 <small>
 [プログラム年表 wikipediaより](https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E%E5%B9%B4%E8%A1%A8)
+,[1G - 5G](https://bridgera.com/5g-promises-new-horizons-for-iot/)
 </small>
-https://bridgera.com/5g-promises-new-horizons-for-iot/
 
-http://wiki.c2.com/?AntiPatternsCatalog
+
+???
 https://dmitri.shuralyov.com/idiomatic-go
 
 
 ---
+class: eye-bg
 
-## Golang とは
+## 旅立ちの不安
 
+.display-2[
 
-* expressive
-* concise
-* clean
-* efficient
+.text-center[
+Golang ? Gopher ?
 
+どんな言語なのか？
 
-<img src="images/what-is-golang.png" width="60%"/>
+どう書いたらいいのか？
+]
+
+]
+
+<div class="row justify-content-center text-center">
+  <div class="col-md-9 offset-md-3 text-center" >
+  <p class="bubble display-2" style="width:64%;">不安な部分を解決</p>
+ </div>
+</div>
 
 ---
-## そもそもの話
+class: center, middle
 
-<div class="container border rounded">
-<div class="row fh ml-3 ml-3 mt-5" style="height:40vh;">
-.display-4[
-ものを認識 と 懸念事項 を考慮して 取っ掛かり の話
-]
+
+<div class="h3 border-success rounded bg-info pt-3 pb-3">
+不安のモトは何か？
+</div>
+
+---
+## モトを探る
 
 .display-3[
-<i class="material-icons text-info">assistant_photo</i> Golangとは （認識）️
+ソフトウェアエンジニアがやりたいこと
 
-<i class="material-icons text-secondary">assistant_photo</i> 開発の要素 (懸念事項)
-
-<i class="material-icons text-secondary">assistant_photo</i> 始める準備 （取っ掛かり）
+- ものを作りたい
+- 技法を適切に利用したい
+- モチベ・哲学・思想を反映したい
 ]
 
-</div>
-</div>
+---
+## モトにある不安要素
 
+.display-4[
+- ものを作りたい
+> → 実装できるか？
+- 技法を適切に利用したい
+> → 技法の適用できるか？  
+> → Senior、Expert の威光（マウンティング）
+- モチベ・哲学・思想を反映したい
+> → いままでの経験はどうなる？  
+> → 新しい慣習ってなんだろ？
+]
 
 ---
+## 旅を通じて感じていく事
 
-## 取っ掛かりとして
 
-TODO
+.h1[
+Golang <i class="icon-go"></i> の .bg-info[Simplicity] (単純・簡単)
+]
+<small>Twelve Go Best Practices / 各言語 / Trend を通して</small>
+
+.h2[
+<br/>
+
+* ものを作るイメージを広げる
+* 技法の使い所を少し広める
+* モチベ・哲学・思想の整理
+]
+
+.text-right[
+<a class="badge badge-pill badge-info" href="https://talks.golang.org/2015/simplicity-is-complicated.slide#1" target="_blank">
+Simplicity is Complicated <i class="inline-b material-icons" style="display: inline-flex; vertical-align: middle;">exit_to_app</i>
+</a>
+
+<small>by Rob Pike</small>
+]
+
+
+???
+
+詳細はPike さんのものを参照ください
 
 ---
-## コラム.1
+## 余談
 
-<div class="center">
-.strong[
-<p class="bubble">
-大事な事は目では見えないよ<br/>
-心で見ないと
+.text-center[
+.display-3[
+<p class="pt-3 pb-3 bubble" style="line-height: 1.6em;">
+ものごとはハートで見なくちゃいけない、<br/>
+
+っていうことなんだ。<br/>
+
+大切なことは、目に見えないからね
 </p>
 ]
-</div>
 
----
+<br/>
 
-
-そもそも
-
-
-- Go言語って
-
-   - 歴史
-   - 雑なお話
-
-https://www.golang-book.com/books/intro
-
-- 不安に要素
-
-   - senior,expert からのプレッシャー
-   -
-
-
-- 何から始めたら
-
-
--
+**引用:** _星の王子様_
+]
 
 ---
 class: center, middle
 
 .big[
-.en[Go Bestpractice Tips]
+.en[Golang] な旅
+
+.en[Twelve Go Bestpractice]
 ]
+
+.title-img[![gopher](images/gophercolor.png)]
+
+---
+
+## Twelve Best Practice ?
+
+
+.left-split[
+.text-center[
+<img src="images/bestpractice-about.png" width="90%"/>  
+Developer Advocate for the Go team at Google and for Google Cloud Platform
+]
+]
+.left-split[
+.text-center[
+<img src="images/talk-bestpractice.png" width="90%" />
+
+Go talks 2013
+]
+]
+
+
+<a class="badge badge-pill badge-info" href="https://talks.golang.org/2013/bestpractices.slide#1" target="_blank">
+Twelve Go Best Practices <i class="inline-b material-icons" style="display: inline-flex; vertical-align: middle;">exit_to_app</i>
+</a>
 
 ---
 
 # BestPractices の紹介と振り返り
-
-[Twelve Go BestPractices](https://talks.golang.org/2013/bestpractices.slide#1) よりGolangの書き方のエッセンスを見ていきましょう
-
 
 .left-split[
 
@@ -551,27 +450,10 @@ class: center, middle
 
 ---
 
-## Twelve Best Practice ?
+## Twelve Go Best Practices
 
+Golangの書き方のエッセンスを見ていきましょう
 
-.left-split[
-.text-center[
-<img src="images/bestpractice-about.png" width="90%"/>  
-Developer Advocate for the Go team at Google and for Google Cloud Platform
-]
-]
-.left-split[
-.text-center[
-<img src="images/talk-bestpractice.png" width="90%" />
-
-Go talks 2013
-]
-]
-
-
----
-
-## Twelve BestPractice Tipsおさらい
 
 ```bash
  Beginner はここから
@@ -579,20 +461,25 @@ Go talks 2013
 2. Avoid repetition when possible
 3. Important code goes first
 4. Document your code
+```
 
+```bash
  中級に向けて
 5. Shorter is better
 6. Packages with multiple files
 7. Make your packages "go get"-able
 8. Ask for what you need
 9. Keep independent packages independent
+```
 
+今日はここまで
+
+```bash
  中級以上のお話
 10. Avoid concurrency in your API
 11. Use goroutines to manage state
 12. Avoid goroutine leaks
 ```
-
 
 ---
 
@@ -605,15 +492,17 @@ type Gopher struct {
 }
 ```
 
-```golang
+```go
 func (g *Gopher) WriteTo(w io.Writer) (size int64, err error) {
     err = binary.Write(w, binary.LittleEndian, int32(len(g.Name)))
     if err == nil {
         size += 4
         var n int
+        // bad
         n, err = w.Write([]byte(g.Name))
         size += int64(n)
         if err == nil {
+            // bad
             err = binary.Write(w, binary.LittleEndian, int64(g.AgeYears))
             if err == nil {
                 size += 4
@@ -630,6 +519,8 @@ func (g *Gopher) WriteTo(w io.Writer) (size int64, err error) {
 ---
 
 ## 1. Avoid nesting by handling errors first
+
+ネストを回避して、１インデントでエラーハンドルをする
 
 ```golang
 func (g *Gopher) WriteTo(w io.Writer) (size int64, err error) {
@@ -672,6 +563,8 @@ func (w *binWriter) Write(v interface{}) {
 }
 ```
 
+バイナリのWriterを作ってそれを再利用してコードを書く
+
 ```golang
 func (g *Gopher) WriteTo(w io.Writer) (int64, error) {
     bw := &binWriter{w: w}
@@ -686,7 +579,7 @@ func (g *Gopher) WriteTo(w io.Writer) (int64, error) {
 
 ## 3. Important code goes first
 
-ライセンス情報、ビルドタグ(Build Tags)、package ドキュメント
+ライセンス情報、ビルドタグ(Build Tags)、package ドキュメント  
 import 文を関係するグループ毎に blank line で分けましょう
 
 ```golang
@@ -700,6 +593,16 @@ import (
 ```
 
 重要な type から始めて、最後の方に補助的な func, type を記述する
+
+```go
+type FistData struct { /* some thing */}
+
+func Func1() {}
+func Func2() {}
+
+type subData struct {}
+
+```
 
 ---
 ## 4. Document your code
@@ -742,7 +645,7 @@ func (p *Author) TextElem() (elems []Elem) {
 
 *  **MarshalWithIndentation** より **MarshalIndent** が好ましい
 
-package名は import を行ったで prefix として利用します  
+package名は import を行った側で prefix として利用します  
 <span class="text-muted">Don't forget that the package name will appear before the identifier you chose. </span>
 
 ```golang
@@ -790,6 +693,27 @@ httpパッケージはそのような形をとっています
 * コマンド等は再利用できないものもある
 * 再利用可能なものはその単位
 
+.left-split[
+
+```bash
+  cmd/
+    xxxget/
+    xxxmount/
+    xxxput/
+```
+]
+
+.right-split[
+```bash
+  auth/
+    auth.go
+  blobref/
+    blobref.go
+    blobref_test.go
+    chanpeek.go
+    fetcher.go
+```
+]
 
 ---
 
@@ -866,13 +790,82 @@ import (
 ## <span class="bg-info">小まとめ</span>
 
 
+.left-split[
+
+Gopher と仲良くなる為に
+
+1. ネストエラーハンドルをしない
+2. 繰り返しを避ける
+3. 重要なコードから書いていく
+4. ドキュメントを書く
+5. 短い名前は良い
+6. ファイルは小さく
+7. go get 可能にする
+8. 何が必要なのかを重要視する
+9. パッケージの独立性を保つ
+]
+
+.right-split[
+
+
+_.en[Golang] <i class="icon-go"></i> 初めての方は こちらから_
+
+
+最初に見ると
+
+* [Go言語の初心者が見ると幸せになれる場所](https://qiita.com/tenntenn/items/0e33a4959250d1a55045)
+
+その他気をつける事
+
+* [CodeReviewComments](https://github.com/golang/go/wiki/CodeReviewComments)
+* [日本語翻訳](https://qiita.com/knsh14/items/8b73b31822c109d4c497)
+
+
+
+上手にかける為に
+
+* [Effective Go](https://golang.org/doc/effective_go.html)
+
+
+コミュニティへ参加したい人は
+
+* [Community Code of Conduct](https://golang.org/conduct)
+
+]
+
 ---
 class: center, middle
 
-
-.big[
-各言語の .en[Tips]
+.display-1[
+.en[Lang] な旅
 ]
+.display-3[
+いろんな言語で楽しむ
+]
+
+.title-img[![gopher](images/gophercolor.png)]
+
+
+---
+class: eye-bg
+
+## いろんな言語の旅
+
+.h1[.lh16[
+* <i class="icon-java-duke"></i> <i class="icon-python text-success"></i> Class(クラス) の継承
+* <i class="icon-ruby text-danger"></i> Ruby block variable
+* <i class="icon-javascript-alt" style="color:gold;"></i> <i class="icon-csharp text-success"></i> async, await
+* <i class="icon-java-duke"></i>  annotation, <i class="icon-python text-success"></i> decorator
+* <i class="icon-java-duke"></i> interface, <i class="icon-python text-success"></i> duck typing
+]]
+
+---
+
+## いろんな言語の旅
+
+.h1[.lh16[
+* <i class="icon-java-duke"></i> <i class="icon-python text-success"></i> Class(クラス) の継承
+]]
 
 ---
 ## <i class="icon-java-duke"></i> <i class="icon-python text-success"></i> Class(クラス) の継承
@@ -972,6 +965,20 @@ func (p *sayChild) Print() { println("child") }
 
 
 ---
+
+## いろんな言語の旅
+
+.h3[.lh16[
+.text-muted[
+* <i class="icon-java-duke"></i> <i class="icon-python text-success"></i> Class(クラス) の継承
+]]]
+
+.h1[
+* <i class="icon-ruby text-danger"></i> Ruby block variable
+]
+
+
+---
 ## <i class="icon-ruby text-danger"></i> Ruby block variable
 
 ```ruby
@@ -1034,6 +1041,31 @@ func main() {
 ## <i class="icon-go"></i> Ruby block variable: Summary
 
 
+<span class="bg-info h1">Golang</span>
+
+* 下のように記述可能でブロック変数というような概念は不要
+
+```go
+for _, num := range []int{1, 2, 3}{
+   // Do something
+}
+```
+
+---
+
+## いろんな言語の旅
+
+.h3[.lh16[
+
+.text-muted[
+* <i class="icon-java-duke"></i> <i class="icon-python text-success"></i> Class(クラス) の継承
+* <i class="icon-ruby text-danger"></i> Ruby block variable
+]]]
+
+.h1[
+* <i class="icon-javascript-alt" style="color:gold;"></i> <i class="icon-csharp text-success"></i> async, await
+]
+
 ---
 ## <i class="icon-javascript-alt" style="color:gold;"></i> <i class="icon-csharp text-success"></i> async, await
 
@@ -1047,8 +1079,8 @@ awaitはasyncの関数内でしか使えない <a class="badge badge-pill badge-
 
 <i class="icon-csharp text-success display-4"></i> の async/await
 
-- async <a class="badge badge-pill badge-info" href="https://docs.microsoft.com/ja-jp/dotnet/csharp/language-reference/keywords/async" target="_blank"> async <i class="fa fa-arrow-right"></i></a>
-- await <a class="badge badge-pill badge-info" href="https://docs.microsoft.com/ja-jp/dotnet/csharp/language-reference/keywords/await" target="_blank"> await  <i class="fa fa-external-link-alt"></i></a>
+- async <a class="badge badge-pill badge-info" href="https://docs.microsoft.com/ja-jp/dotnet/csharp/language-reference/keywords/async" target="_blank"> async <i class="fa fa-external-link-alt"></i></a> Task, Task<TResult> を返す非同期メソッド
+- await <a class="badge badge-pill badge-info" href="https://docs.microsoft.com/ja-jp/dotnet/csharp/language-reference/keywords/await" target="_blank"> await  <i class="fa fa-external-link-alt"></i></a> 非同期処理(Task, Task<TResult>, ValueTask, ValueTask<TResult>)を待つ
 
 
 ---
@@ -1097,7 +1129,11 @@ awaitAndAsyncCall(nums).then((msg) => {
   console.log(msg);
 });
 ```
+
+<button class="btn btn-raised" onclick="player.open('/src/async_await.js');">Eval</button>
 ]
+
+
 
 ---
 
@@ -1159,7 +1195,12 @@ func main() {
 	println("finish")
 }
 ```
+
+<button class="btn btn-raised" onclick="player.open('/src/async_await.go');">Eval</button>
+
 ]
+
+
 
 ---
 ## <i class="icon-go"></i> async, await: Summary
@@ -1176,9 +1217,21 @@ func main() {
 * 1つの処理なら単純に関数をそのまま呼ぶ
 
 
-<span class="bg-info h1"> <i class="icon-go"></i> golang </span>
+---
 
-* 
+## いろんな言語の旅
+
+.h3[
+.lh16[
+.text-muted[
+* <i class="icon-java-duke"></i> <i class="icon-python text-success"></i> Class(クラス) の継承
+* <i class="icon-ruby text-danger"></i> Ruby block variable
+* <i class="icon-javascript-alt" style="color:gold;"></i> <i class="icon-csharp text-success"></i> async, await
+]]]
+
+.h1[
+* <i class="icon-java-duke"></i>  annotation, <i class="icon-python text-success"></i> decorator
+]
 
 ---
 ## <i class="icon-java-duke"></i>  annotation, <i class="icon-python text-success"></i> decorator
@@ -1224,6 +1277,9 @@ def hello():
     ''' no decrated function '''
     return 'hello'
 ```
+
+<button class="btn btn-raised" onclick="player.open('/src/annotation.java','/src/decorator.py');">Eval</button>
+
 ]
 
 ---
@@ -1316,6 +1372,8 @@ type Api struct {
 
 ```
 
+<button class="btn btn-raised" onclick="player.open('/src/decopartor_annotation.go');">Eval</button>
+
 
 ---
 ## <i class="icon-go"></i>  anotation, decorator: Summary
@@ -1326,11 +1384,35 @@ type Api struct {
 * ※ 例は良くないので忘れてください  
   encoding/json とかを参照ください
 
+```go
+type Person struct {
+    Id       int    `json:"id"` `db:"id"`
+    Name     string `json:"name"` `db:"name"`
+    Age      int `json:"age"` `db:"age"`
+}
+```
+
+
 <span class="bg-info h1">decorator</span>
 
 * Function Adapterで大丈夫
 
+---
 
+## いろんな言語の旅
+
+.h3[
+.lh16[
+.text-muted[
+* <i class="icon-java-duke"></i> <i class="icon-python text-success"></i> Class(クラス) の継承
+* <i class="icon-ruby text-danger"></i> Ruby block variable
+* <i class="icon-javascript-alt" style="color:gold;"></i> <i class="icon-csharp text-success"></i> async, await
+* <i class="icon-java-duke"></i>  annotation, <i class="icon-python text-success"></i> decorator
+]]]
+
+.h1[
+* <i class="icon-java-duke"></i> interface, <i class="icon-python text-success"></i> duck typing
+]
 
 ---
 ## <i class="icon-java-duke"></i>  interface, <i class="icon-python text-success"></i> duck typing
@@ -1397,6 +1479,8 @@ Cat().run()
 ```
 ]
 
+<button class="btn btn-raised" onclick="player.open('/src/interface.java', '/src/ducktype.py');">Eval</button>
+
 
 ---
 
@@ -1456,6 +1540,9 @@ func main() {
 	animal.Run()
 }
 ```
+
+<button class="btn btn-raised" onclick="player.open('/src/interface_ducktype.go');">Eval</button>
+
 ]
 
 
@@ -1473,20 +1560,37 @@ func main() {
 * 実装対象は曖昧に実装が可能
 
 ---
+class: eye-bg
 
 ## <span class="bg-info">小まとめ</span>
 
+.h1[
+
+* interface, duck typing をサポートしているよ
+]
 
 
 ---
 class: center, middle
 
-.big[実装Tips]
+.display-1[
+過去の
+
+.en[Trend] な旅 編
+]
+
+.title-img[![gopher](images/gophercolor.png)]
+
+
+---
+class: center, middle, eye-bg
+
+.big[<span class="en">Linq / ReactiveX</span>]
 
 
 ---
 
-## Linq
+## <span class="en">Linq (Language Integrated Query)</span>
 
 データに集合対して
 
@@ -1508,44 +1612,102 @@ class: center, middle
 ```
 
 
-### References
+### <span class="en">References</span>
 
 - [Wikipedia EN](https://en.wikipedia.org/wiki/Language_Integrated_Query) /  [Wikipedia JA](https://ja.wikipedia.org/wiki/%E7%B5%B1%E5%90%88%E8%A8%80%E8%AA%9E%E3%82%AF%E3%82%A8%E3%83%AA)
-- [C# Programming concepts](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/)
-- go-linq [godoc](https://godoc.org/github.com/ahmetb/go-linq) / [github](https://github.com/ahmetb/go-linq)
-
-https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries
+- [C# Programming concepts Language Integrated Query (LINQ)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/) <i class="fab fa-windows"></i>
+- <a class="badge badge-pill badge-info" href="https://github.com/ahmetb/go-linq" target="_blank">go-linq godoc</a> / <a class="badge badge-pill badge-info" href="https://godoc.org/github.com/ahmetb/go-linq" target="_blank">github</a>
 
 ---
-## Linq　Java
+## <span class="en">Linq Java</span>
 
 ```java
+// 文字列Listを , で結合した文字列を返す関数
 Function<IntStream,String> join = (s) -> {
 	return String.join(",",
 					   s.mapToObj(Integer::toString)
 					   .collect(Collectors.toList()));
 };
 
+// 1 .. 9 までの配列
 int[] data = IntStream.range(1, 10).toArray();
 
+// stream の作成
 IntStream linq = IntStream.of(data);
+
+// 内容表示：配列内容を全部
 System.out.println("data    : " + join.apply(linq));
 
+// 4 より大きい数字のみフィルタ
 linq = IntStream.of(data).filter(i -> i > 4);
+// 内容表示
 System.out.println("filtered: " + join.apply(linq));
 ```
 
+<button class="btn btn-raised" onclick="player.open('/src/linq.java');">Eval</button>
+
+
 ---
-## Linq　Example
+## <span class="en">Linq Example</span>
+
+
+go-linq を元に作成（汎用性を減らしてコピペ）してます
+
+.h3[
+.lh16[
+
+* query
+   * クエリを表すもの
+* from(data []int)
+   * data をクエリに変換
+* selectBy()
+   * １データへの操作
+* where()
+   * 条件絞り込み
+* orderBy()
+   * ソート
+]]
+
+---
+## <span class="en">Linq Example</span>
 
 .left-split[
 
-```go
+```golang
+// 反復を繰り返す関数
 type itr func() (int, bool)
 
+// 反復可能なクエリ
+type query struct {
+	itr func() itr
+}
+
+// map変換関数を受けて各要素で関数実行の反復を繰り返す
+func (q query) selectBy(mapFn func(int) int) query {
+	return query{
+		itr: func() itr {
+			next := q.itr()
+			return func() (int, bool) {
+				ret, ok := next()
+				if ok {
+					ret = mapFn(ret)
+				}
+				return ret, ok
+			}
+		},
+	}
+}
+
+```
+]
+
+.right-split[
+```go
+// []int からクエリを作成する
 func from(data []int) query {
 	len := len(data)
 	return query{
+        // 実行する度に index をインクリメントして値を返す関数
 		itr: func() itr {
 			index := 0
 			return func() (int, bool) {
@@ -1563,35 +1725,12 @@ func from(data []int) query {
 ```
 ]
 
-.right-split[
-```go
-type query struct {
-	itr func() itr
-}
-
-// map,select is reserved word
-func (q query) selectBy(mapFn func(int) int) query {
-	return query{
-		itr: func() itr {
-			next := q.itr()
-			return func() (int, bool) {
-				ret, ok := next()
-				if ok {
-					ret = mapFn(ret)
-				}
-				return ret, ok
-			}
-		},
-	}
-}
-```
-]
-
 ---
-## Linq Example
+## <span class="en">Linq Example</span>
 
 .left-split[
 ```go
+// フィルタ関数でフィルタして反復を繰り返す
 func (q query) where(filter func(i int) bool) query {
 	return query{
 		itr: func() itr {
@@ -1617,6 +1756,7 @@ func (q query) where(filter func(i int) bool) query {
 .right-split[
 
 ```go
+// ソートを行う
 func (q query) orderBy(less func(i, j int) bool) query {
 	var nums []int
 	q.apply(&nums)
@@ -1624,6 +1764,7 @@ func (q query) orderBy(less func(i, j int) bool) query {
 	return from(nums)
 }
 
+// ソート用
 type nums []int
 func (ns nums) Len() int      { return len(ns) }
 func (ns nums) Swap(i, j int) { ns[i], ns[j] = ns[j], ns[i] }
@@ -1640,8 +1781,7 @@ func (s sorter) Less(i, j int) bool {
 ]
 
 ---
-## Linq Example
-
+## <span class="en">Linq Example</span>
 
 
 .left-split[
@@ -1679,20 +1819,23 @@ func main() {
 	fmt.Println("select data: ", selectValues)
 }
 ```
+
+<button class="btn btn-raised" onclick="player.open('/src/linq.go');">Eval</button>
+
 ]
 
 ---
-## Linq　Summary
+## <span class="en">Linq Summary</span>
 
 <span class="bg-info h1"><i class="icon-go"></i>golang</span>
 
-* 言語標準での実装は無い
-* <code>go get</code> で取得しては利用可能
-
+* 言語標準パッケージでの実装は無い
+* <code class="remark-inline-code inline-b">go get github.com/ahmetb/go-linq</code> で取得しては利用可能
+* .text-muted[個人的にSliceにその機能があると嬉しい]
 
 
 ---
-## ReactiveX
+## <span class="en">ReactiveX</span>
 
 <div class="text-center mermaid">
 graph LR;
@@ -1706,20 +1849,54 @@ graph LR;
 </div>
 
 
-
-* Observer, Iterator パターンと Functional Programming のアイデアを組み合わせたもの
-* 
+* .en[Observer, Iterator] パターンと .en[Functional Programming] のアイデアを組み合わせたもの
 
 
-#### References
+#### .en[References]
 
-- [ReactiveX](http://reactivex.io/)
+- .en[[ReactiveX](http://reactivex.io/)]
    - [リアクティブ宣言](https://www.reactivemanifesto.org/ja)
-- [RxGo github](https://github.com/ReactiveX/RxGo)
-
+- .en[[RxGo github](https://github.com/ReactiveX/RxGo)]
 
 ---
-## ReactiveX Exmaple
+## ReactiveX::RxJS
+
+
+```javascript
+document.addEventListener('click', () => console.log('Clicked!'));
+  ↓↓↓
+import { fromEvent } from 'rxjs';
+
+fromEvent(document, 'click').subscribe(() => console.log('Clicked!'));
+```
+
+
+```js
+import { Observable } from 'rxjs';
+ 
+const observable = new Observable(subscriber => {
+  subscriber.next(1); subscriber.next(2); subscriber.next(3);
+});
+ 
+console.log('just before subscribe');
+observable.subscribe({
+  next(x) { console.log('got value ' + x); },
+  error(err) { console.error('something wrong occurred: ' + err); },
+  complete() { console.log('done'); }
+});
+console.log('just after subscribe');```
+
+```bash
+just before subscribe
+got value 1
+got value 2
+got value 3
+just after subscribe
+done
+```
+
+---
+## <span class="en">ReactiveX Exmaple</span>
 
 .left-split[
 
@@ -1764,14 +1941,44 @@ func main() {
 ```
 ]
 
+---
+## <span class="en">ReactiveX Exmaple</span>
+
+<div class="text-center mermaid">
+graph LR;
+    start((Event)) --> cb[Create Observable]
+	cb --> s[Subscribe connect to observer];
+	s --> fin((Continue));
+
+    style start fill:#2cb5e8;
+    style fin fill:#2cb5e8;
+</div>
+
+<div class="text-center mermaid">
+graph LR;
+	start((Continue)) --> ob{Observable Error?};
+	ob --> |yes| do[Observer # onError]
+	ob --> |no| no[Observer # onNext]
+	do --> done[onCompleted];
+	no --> done[onCompleted];
+	done --> fin((End));
+
+    style start fill:#2cb5e8;
+    style fin fill:#2cb5e8;
+</div>
+
+1. Event ソースから Observable を作成する
+2. handler から Subscribe() で Observer 接続する
+
 
 ---
-## ReactiveX Exmaple
+## <span class="en">ReactiveX Exmaple</span>
 
 .left-split[
 
 ```go
 type (
+    // Event Handle funcs
 	Next  func(interface{})
 	Done  func()
 	Error func(error)
@@ -1800,11 +2007,13 @@ type observer struct {
 .right-split[
 
 ```go
+// 元のコードは onNext, onError, onCompleted や オプションの引数から
+// 内部で observer を接続している
 func (o observable) subscribe(ob observer) chan subscription {
 	done := make(chan subscription)
 	sub := subscription{}
-
-	go func() {
+    // イベントを受けて、エラーの場合は onError, 値は onNext に通知
+	go func() {  // 元のコードはOptionに応じて、concurent で実行
 	OuterLoop:
 		for item := range o {
 			switch item := item.(type) {
@@ -1822,15 +2031,13 @@ func (o observable) subscribe(ob observer) chan subscription {
 		}
 		done <- sub.End()
 	}()
-
 	return done
 }
-
 ```
 ]
 
 ---
-## ReactiveX Example
+## <span class="en">ReactiveX Example</span>
 
 .left-split[
 
@@ -1872,7 +2079,7 @@ func from(it iterable) observable {
 ]
 
 ---
-## ReactiveX Example
+## <span class="en">ReactiveX Example</span>
 
 
 .left-split[
@@ -1900,6 +2107,7 @@ func justSubscribe() {
 	close(sub)
 }
 ```
+<button class="btn btn-raised" onclick="player.open('/src/rx.go');">Eval</button>
 
 ]
 
@@ -1936,83 +2144,181 @@ func ticker() {
 }
 ```
 
-
 ]
 
 
 ---
-## ReactiveX Sumamry
+## <span class="en">ReactiveX Sumamry</span>
 
+<span class="bg-info h1">Golang</span>
 
+* <code class="remark-inline-code inline-b">go get -u github.com/reactivex/rxgo</code> で取得しては利用可能
+* .text-danger[This is an early project and your contributions will help shape its direction.] なので注意
+
+<span class="bg-info h1">ReactiveX(FRP)</span>
+
+* いろいろ大変（概念理解したり、実装力あげたり）
+* 全てをストリームと見たり...
+.text-center[
+<image src="images/everything-is-stream.jpg" width="20%" />
+]
+
+---
+class: center, middle, eye-bg
+
+.display-1[
+旅の終わり
+
+まとめ
+]
+
+---
+
+## 旅のまとめ
+
+<span class="bg-info h1">Golang の旅</span>
+
+* 簡潔に書く
+
+<span class="bg-info h1">Lang な旅</span>
+
+* SubClass を持たない
+* block 変数とか特殊な変数やその記述はない
+* async, await はサポートしない
+* annotation, decorator はサポートしない
+* interface, duck typing をサポート <i class="icon-go"></i>
+
+<span class="bg-info h1">Trend な旅</span>
+
+* 簡単に書けるよ
+* 使うかは・・・あなた次第・・・
 
 
 ---
 class: center, middle
 
-.big[まとめ]
+.h1[
+サポート機能少ない
 
+けど簡単にかける
+]
 
----
-
-１、概要
-
-- 過去の発表であった BestPractice１２といろいろな言語や実装記述のTipsをベースに
-  BestPracticeな部分をPickupしてく話を説明します
-- 発表における Best Practice の説明します
-   * Golang の良さ simple, readable, maintainable を軸としている旨の説明
-   * Tipsとのエッセンスから恩恵やGolang（筆者）視点での考察
--
+.big[
+なんでか？
+]
 
 ---
 
-２、 BestPractice１２のTipsおさらい
+## まとめ と .en[Features in Go] <i class="icon-go"></i>
 
-* Beginner 向け (これを守れるだけでも十分すごいですな話)
-1. Avoid nesting by handling errors first
-2. Avoid repetition when possible
-3. Important code goes first
-4. Document your code
+<div class="card">
 
-* 中級に向けて (知らずに中級者の仲間入りですな話)
-5. Shorter is better
-6. Packages with multiple files
-7. Make your packages "go get"-able
-8. Ask for what you need
-9. Keep independent packages independent
+<div class="card-body bg-light border-rounded">
 
-* 中級からの（省略）
-10. Avoid concurrency in your API
-11. Use goroutines to manage state
-12. Avoid goroutine leaks
+<div class="h2">
+<p>Go は違うものです</p>
+<p class="text-muted">Go is different.</p>
+<br>
+<p>他の言語のようににはならないよ</p>
+<p class="text-muted">Go does not try to be like the other languages.</p>
+<br>
+<p>機能を競わないよ</p>
+<p class="text-muted">Go does not compete on features.</p>
+</div>
+</div></div>
 
 ---
-３、 言語のTips
 
-- Java,Python ... : Class 継承ぽいTips
-  * （エッセンス）悪手になりがちなのでやめよう
-- Ruby block variable : ブロック変数ぽい Tips
-  * （エッセンス）Slap になってればOKなのかも
-- JS,C# await async
-  * （エッセンス）goruotine を書こう
-- Java,Python
-  * annotation, decorator
-  * Interface, duck typing
-  * （エッセンス）誰得かはアナタ次第な話
+## まとめ
+
+<div class="text-center display-2">
+<span class="bg-info pl-4 pr-4 pt-1 pb-1 en">
+Simplicity
+</span>
+</div>
+
+<br>
+
+.en[
+.text-center[
+Go is simple, at least compared to established languages.
+
+Simplicity has many facets. 
+]]
+
+<br>
+
+<div class="text-center display-2">
+<span class="bg-info pl-4 pr-4 pt-1 pb-1 en">
+Simplicity is Complicated
+</span>
+</div>
+
+.text-center[
+<a class="badge badge-pill badge-info" href="https://talks.golang.org/2015/simplicity-is-complicated.slide#1" target="_blank">
+Simplicity is Complicated <i class="inline-b material-icons" style="display: inline-flex; vertical-align: middle;">exit_to_app</i>
+</a>
+
+<small>by Rob Pike</small>
+]
 
 ---
-４，実装Tips
+class: center, eye-bg
 
-- Linq
-  * （エッセンス）Slice がサポートしていると嬉しいよね
 
-- ReactiveX
-  * （エッセンス）書けるとかっこいいかもしれないけど、宗教戦争みたいになったり
-   そもそもがもう simple じゃない
+.display-2[
+
+<br>
+
+Go code that is
+
+- simple,
+- readable,
+- maintainable.
+]
 
 ---
-５、 まとめ
+class: center, middle, eye-bg
 
- - Tips要素を引くと Golang の形になる旨を説明
- - go 2.x で generics が入いる事への思い
-   - go 2 の survey summary にも触れつつ
- - Demo tips を絡めたコード実装例(Optional 発表に間に合えば)
+.display-2[
+<p class="pt-3 pb-3 bubble" style="line-height: 1.6em;">
+ご静聴ありがとうございました
+</p>
+]
+
+---
+
+## .en[Simplicity] と .en[Generics]
+
+.en[Declaration]
+
+```go
+type List(type T) []T
+
+func Keys(type K, V)(m map[K]V) []K
+```
+
+.en[Uses]
+
+```go
+var ints List(int)
+
+keys := Keys(int, string)(map[int]string{1:"one", 2: "two"})
+```
+
+.text-right[
+<a class="badge badge-pill badge-info" href="https://go.googlesource.com/proposal/+/master/design/go2draft-generics-overview.md" target="_blank">
+Generics — Problem Overview <i class="inline-b material-icons" style="display: inline-flex; vertical-align: middle;">exit_to_app</i>
+</a>
+]
+
+.left-split[
+* 個人的な気持ちでは嬉しい
+* Simplicity を崩してしまうのでは無いか？とちょっと心配しています
+]
+
+.right-split[
+<img src="images/mic-drop.png" width="40%">
+]
+
+

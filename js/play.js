@@ -1,7 +1,7 @@
 function initPlayer(playerId){
   'use strict';
   var langMap = {
-	rb: 'ruby', go: 'go', py: 'python', java: 'java', md: 'markdown'
+	rb: 'ruby', go: 'go', py: 'python', java: 'java', md: 'markdown', js: 'js'
   };
 
   var el = document.getElementById(playerId);
