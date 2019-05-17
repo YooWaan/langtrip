@@ -309,8 +309,8 @@ Golang ? Gopher ?
 class: center, middle
 
 
-<div class="h3 border-success rounded bg-info pt-3 pb-3">
-不安のモトは何か？
+<div class="h3 border-success rounded bg-info text-light pt-3 pb-3">
+<b>不安のモトは何か？</b>
 </div>
 
 ---
@@ -345,14 +345,14 @@ class: center, middle
 .h1[
 Golang <i class="icon-go"></i> の .bg-info[Simplicity] (単純・簡単)
 ]
-<small>Twelve Go Best Practices / 各言語 / Trend を通して</small>
+
 
 .h2[
 <br/>
 
-* ものを作るイメージを広げる
+* ものを作るイメージを広げる　 → Twelve Go Best Practices
 * 技法の使い所を少し広める
-* モチベ・哲学・思想の整理
+* モチベ・哲学・思想の整理　　 → 各言語 / Trend
 ]
 
 .text-right[
@@ -367,25 +367,6 @@ Simplicity is Complicated <i class="inline-b material-icons" style="display: inl
 ???
 
 詳細はPike さんのものを参照ください
-
----
-## 余談
-
-.text-center[
-.display-3[
-<p class="pt-3 pb-3 bubble" style="line-height: 1.6em;">
-ものごとはハートで見なくちゃいけない、<br/>
-
-っていうことなんだ。<br/>
-
-大切なことは、目に見えないからね
-</p>
-]
-
-<br/>
-
-**引用:** _星の王子様_
-]
 
 ---
 class: center, middle
@@ -409,24 +390,23 @@ class: center, middle
 Developer Advocate for the Go team at Google and for Google Cloud Platform
 ]
 ]
-.left-split[
+.right-split[
 .text-center[
 <img src="images/talk-bestpractice.png" width="90%" />
 
 Go talks 2013
+
+]
+.text-right[
+<a class="badge badge-pill badge-info" href="https://talks.golang.org/"> Go Talks <i class="fa fa-arrow-right"></i></a>
 ]
 ]
 
-
-<a class="badge badge-pill badge-info" href="https://talks.golang.org/2013/bestpractices.slide#1" target="_blank">
-Twelve Go Best Practices <i class="inline-b material-icons" style="display: inline-flex; vertical-align: middle;">exit_to_app</i>
-</a>
 
 ---
 
-# BestPractices の紹介と振り返り
+# BestPractices の紹介
 
-.left-split[
 
 1. Avoid nesting by handling errors first
 2. Avoid repetition when possible
@@ -442,11 +422,10 @@ Twelve Go Best Practices <i class="inline-b material-icons" style="display: inli
 12. Avoid goroutine leaks
 ]
 
-.right-split[
-    <img src="images/go-talks.png" width="50%">
-]
+<a class="badge badge-pill badge-info" href="https://talks.golang.org/2013/bestpractices.slide#1" target="_blank">
+Twelve Go Best Practices <i class="inline-b material-icons" style="display: inline-flex; vertical-align: middle;">exit_to_app</i>
+</a>
 
-<a class="badge badge-pill badge-info" href="https://talks.golang.org/"> Go Talks <i class="fa fa-arrow-right"></i></a>
 
 ---
 
@@ -852,7 +831,7 @@ class: eye-bg
 ## いろんな言語の旅
 
 .h1[.lh16[
-* <i class="icon-java-duke"></i> <i class="icon-python text-success"></i> Class(クラス) の継承
+* <i class="icon-java-duke"></i> <i class="icon-python text-success"></i> (<i class="icon-ruby text-danger"></i> <i class="icon-csharp text-success"></i>)Class(クラス) の継承
 * <i class="icon-ruby text-danger"></i> Ruby block variable
 * <i class="icon-javascript-alt" style="color:gold;"></i> <i class="icon-csharp text-success"></i> async, await
 * <i class="icon-java-duke"></i>  annotation, <i class="icon-python text-success"></i> decorator
@@ -2321,4 +2300,23 @@ Generics — Problem Overview <i class="inline-b material-icons" style="display:
 <img src="images/mic-drop.png" width="40%">
 ]
 
+
+---
+## 余談
+
+.text-center[
+.display-3[
+<p class="pt-3 pb-3 bubble" style="line-height: 1.6em;">
+ものごとはハートで見なくちゃいけない、<br/>
+
+っていうことなんだ。<br/>
+
+大切なことは、目に見えないからね
+</p>
+]
+
+<br/>
+
+**引用:** _星の王子様_
+]
 
