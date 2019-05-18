@@ -1157,7 +1157,7 @@ func awaitFunc(wg *sync.WaitGroup, sleep time.Duration, start time.Time) {
 func main() {
 	start := time.Now()
 	nums := []time.Duration{ 2 * time.Second, time.Second, 1500 * time.Millisecond }
-	
+
 	// async finished
 	for _, sec := range nums {
 		go asyncFunc(sec, start)
@@ -1286,7 +1286,7 @@ class Caller {
             String result = option.isActive()
                 ? String.format("warp[%s]", method.invoke(instance))
                 : method.invoke(instance).toString();
-            
+
             System.out.println("Result[" + result + "]");
         } catch (Throwable cause) {
             throw new RuntimeException(cause);
@@ -1838,7 +1838,7 @@ graph LR;
 - .en[[RxGo github](https://github.com/ReactiveX/RxGo)]
 
 ---
-## ReactiveX::RxJS
+## .en[ReactiveX::RxJS]
 
 
 ```javascript
@@ -1852,11 +1852,11 @@ fromEvent(document, 'click').subscribe(() => console.log('Clicked!'));
 
 ```js
 import { Observable } from 'rxjs';
- 
+
 const observable = new Observable(subscriber => {
   subscriber.next(1); subscriber.next(2); subscriber.next(3);
 });
- 
+
 console.log('just before subscribe');
 observable.subscribe({
   next(x) { console.log('got value ' + x); },
@@ -2164,7 +2164,8 @@ class: center, middle, eye-bg
 * SubClass を持たない
 * block 変数とか特殊な変数やその記述はない
 * async, await はサポートしない
-* annotation, decorator はサポートしない
+* annotation, decorator はサポートしない  
+  → StructTagをサポート <i class="icon-go"></i>
 * interface, duck typing をサポート <i class="icon-go"></i>
 
 <span class="bg-info h1">Trend な旅</span>
@@ -2204,7 +2205,66 @@ class: center, middle
 <p>機能を競わないよ</p>
 <p class="text-muted">Go does not compete on features.</p>
 </div>
-</div></div>
+</div>
+
+</div>
+
+<br/>
+
+.text-center[
+.en[by Rob Pike]
+]
+
+---
+
+## 旅のまとめ からみる Goの機能
+
+.left-split[
+
+<span class="bg-info h1">Golang の旅</span>
+
+* 簡潔に書く
+
+<span class="bg-info h1">Lang な旅</span>
+
+* SubClass を持たない
+* block 変数とか特殊な変数やその記述はない
+* async, await はサポートしない
+* annotation, decorator はサポートしない  
+  → StructTagをサポート <i class="icon-go"></i>
+* interface, duck typing をサポート <i class="icon-go"></i>
+
+<span class="bg-info h1">Trend な旅</span>
+
+* 簡単に書けるよ
+* 使うかは・・・あなた次第・・・
+
+]
+
+.right-split[
+
+.h2[
+<span class="bg-warning text-white h1">デメリット</span>
+
+* 言語機能が増加すると覚える・することも増加
+   * 保守性、可読性の減少
+
+<br><br>
+
+<span class="bg-primary text-white h1">やりたいこと</span>
+
+* ものを作ったり、問題を解決したりしたい
+* Trendの取り込みや技法の使いたい
+
+<br><br>
+
+<span class="bg-danger text-white h1">モチベ・思想・哲学</span>
+
+* What???
+
+]
+
+]
 
 ---
 
@@ -2222,7 +2282,7 @@ Simplicity
 .text-center[
 Go is simple, at least compared to established languages.
 
-Simplicity has many facets. 
+Simplicity has many facets.
 ]]
 
 <br>
@@ -2238,7 +2298,7 @@ Simplicity is Complicated
 Simplicity is Complicated <i class="inline-b material-icons" style="display: inline-flex; vertical-align: middle;">exit_to_app</i>
 </a>
 
-<small>by Rob Pike</small>
+<small class="en">by Rob Pike</small>
 ]
 
 ---
@@ -2254,6 +2314,26 @@ Go code that is
 - simple,
 - readable,
 - maintainable.
+]
+
+---
+class: center, eye-bg
+
+<br>
+
+.display-2[
+<p class="pt-3 pb-3 bubble" style="line-height: 1.6em;">
+<i class="icon-python text-success"></i>
+<i class="icon-java-duke"></i>
+<i class="icon-ruby text-danger"></i>
+<i class="icon-javascript-alt" style="color:gold;"></i>
+<i class="icon-csharp text-success"></i>
+<i class="icon-go text-info"></i>
+<br>
+各言語ディスっている<br>
+内容あればすみません
+
+</p>
 ]
 
 ---
@@ -2319,4 +2399,3 @@ Generics — Problem Overview <i class="inline-b material-icons" style="display:
 
 **引用:** _星の王子様_
 ]
-
